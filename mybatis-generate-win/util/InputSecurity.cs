@@ -20,10 +20,8 @@ using System.Text;
 
 namespace mybatis_generate_win.util
 {
-    public static class Constance
+    public class InputSecurity
     {
-
-        public const string DefaultIpAddress = "127.0.0.1";
 
     }
 }

@@ -1,4 +1,19 @@
-﻿using System;
+﻿/* Copyright 2019 icefrog.su@qq.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,6 +65,10 @@ namespace mybatis_generate_win
             label_scheme.Hide();
             label_url.Hide();
             label_connectStatus.Hide();
+
+            // hidden generate panel and show the init panel
+            panel_generate.Hide();
+            panel_initResource.Show();
 
         }
 
@@ -128,6 +147,20 @@ namespace mybatis_generate_win
         /// <param name="e">EventArgs</param>
         private void tb_next_Click(object sender, EventArgs e)
         {
+
+            // hidden the init panage and show the generate panel
+            panel_initResource.Hide();
+            panel_generate.Show();
+
+            string databaseSel = cbx_databaseList.Text;
+            string ipAddr = txt_ip.Text;
+            string port = txt_port.Text;
+            string userName = txt_userName.Text;
+            string password = txt_password.Text;
+            string scheme = cbx_scheme.Text;
+            string url = txt_url.Text;
+            
+
             // 数据必填项校验
 
             // 提示选择数据库/ 必须经过校验

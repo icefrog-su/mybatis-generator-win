@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="util\Constance.cs" />
     <Compile Include="util\Database.cs" />
+    <Compile Include="util\InputSecurity.cs" />
     <Compile Include="util\StringUtils.cs" />
     <Compile Include="Workbench.cs">
       <SubType>Form</SubType>
