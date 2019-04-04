@@ -134,7 +134,7 @@ namespace mybatis_generate_win
 
             // 创建新的panel, 并且构建控件元素
 
-            // 
+            // add some 
         }
     }
 }
