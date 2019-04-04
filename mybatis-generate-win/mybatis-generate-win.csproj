@@ -34,6 +34,12 @@
     <Reference Include="CSkin">
       <HintPath>..\..\..\..\Desktop\CSkin 16.1.14.3\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
     </Reference>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\MybatisGenerator\MybatisGenerator\bin\Debug\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\..\..\..\..\Users\ICE FROG\Desktop\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -47,9 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="database\AbstractDatabaseConnector.cs" />
+    <Compile Include="database\MySqlConnector.cs" />
+    <Compile Include="database\OracleConnector.cs" />
+    <Compile Include="database\SqlServerConnector.cs" />
+    <Compile Include="util\Connector.cs" />
     <Compile Include="util\Constance.cs" />
     <Compile Include="util\Database.cs" />
+    <Compile Include="util\DatabaseConnectorProvider.cs" />
+    <Compile Include="util\DataBaseType.cs" />
     <Compile Include="util\InputSecurity.cs" />
+    <Compile Include="util\NumberUtils.cs" />
     <Compile Include="util\StringUtils.cs" />
     <Compile Include="Workbench.cs">
       <SubType>Form</SubType>

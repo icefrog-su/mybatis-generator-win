@@ -26,6 +26,7 @@ using mybatis_generate_win.util;
 
 namespace mybatis_generate_win
 {
+    // use the mac style(CSKin DLL)
     public partial class Workbench : Skin_Mac
     {
         /// <summary>
@@ -34,6 +35,11 @@ namespace mybatis_generate_win
         /// (oracle database has no concept of library, only the concept of user)
         /// </summary>
         public static bool IsOracle = false;
+
+        /// <summary>
+        /// Indicates whether the connection is currently checked for validity
+        /// </summary>
+        public static bool IsTest = false;
 
         public Workbench()
         {
@@ -131,10 +137,13 @@ namespace mybatis_generate_win
 
             if (IsOracle)
             {
+                // Modity the test tag
+                IsTest = true;
                 MessageBox.Show("test the connect(oracle not be has a scheme)");
             }
             else
             {
+                // Init the scheme info (sqlserver or mysql) can be test the connect before
                 MessageBox.Show("initialize the all scheme and test the connect");
             }
 
@@ -148,9 +157,7 @@ namespace mybatis_generate_win
         private void tb_next_Click(object sender, EventArgs e)
         {
 
-            // hidden the init panage and show the generate panel
-            panel_initResource.Hide();
-            panel_generate.Show();
+            
 
             string databaseSel = cbx_databaseList.Text;
             string ipAddr = txt_ip.Text;
@@ -159,15 +166,91 @@ namespace mybatis_generate_win
             string password = txt_password.Text;
             string scheme = cbx_scheme.Text;
             string url = txt_url.Text;
-            
 
-            // 数据必填项校验
+            // check inputs
+            if (StringUtils.isEmpty(databaseSel))
+            {
+                // It never happens
+                MessageBox.Show("Please select database!");
+            }
+            // ip address
+            if (StringUtils.isEmpty(ipAddr))
+            {
+                string noIpTitle = "Please enter the IP address !";
+                label_ip.Show();
+                label_ip.Text = noIpTitle;
+                return;
+            }
+            if (!InputSecurity.isIp(ipAddr))
+            {
+                string ipNotAllow = "Illegal ip address !";
+                label_ip.Show();
+                label_ip.Text = ipNotAllow;
+                return;
+            }
+            label_ip.Hide();
+            // port
+            if (StringUtils.isEmpty(port))
+            {
+                string noPortTitle = "Please enter the port !";
+                label_port.Show();
+                label_port.Text = noPortTitle;
+                return;
+            }
+            if(!NumberUtils.IsNumber(port) && !NumberUtils.IsSection(1, 65532, Int32.Parse(port)))
+            {
+                string noPortTitle = "Illegal port !";
+                label_port.Show();
+                label_port.Text = noPortTitle;
+                return;
+            }
+            label_port.Hide();
+            // user name
+            if (StringUtils.isEmpty(userName))
+            {
+                string noUserNameTitle = "Please enter the user name !";
+                label_userName.Show();
+                label_userName.Text = noUserNameTitle;
+                return;
+            }
+            label_userName.Hide();
+            // password
+            if (StringUtils.isEmpty(password))
+            {
+                string noPasswordTitle = "Please enter the user name !";
+                label_password.Show();
+                label_password.Text = noPasswordTitle;
+                return;
+            }
+            label_password.Hide();
+            // if not oracle, check the scheme
+            if (!IsOracle)
+            {
+                if (StringUtils.isEmpty(scheme))
+                {
+                    string noSchemeTitle = "Please choose scheme !";
+                    label_scheme.Show();
+                    label_scheme.Text = noSchemeTitle;
+                    return;
+                }
+            }
+            label_scheme.Hide();
+            // url
+            if (StringUtils.isEmpty(url))
+            {
+                string noUrlTitle = "Please enter the url !";
+                label_url.Show();
+                label_url.Text = noUrlTitle;
+                return;
+            }
+            label_url.Hide();
 
-            // 提示选择数据库/ 必须经过校验
+            // is not oracle, remind test connect
 
-            // 创建新的panel, 并且构建控件元素
 
-            // add some  
+            // hidden the init panage and show the generate panel
+            panel_initResource.Hide();
+            panel_generate.Show();
         }
     }
 }
