@@ -1,0 +1,12 @@
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\bin\Debug\mybatis-generate-win.exe
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\bin\Debug\mybatis-generate-win.pdb
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\bin\Debug\CSkin.dll
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\bin\Debug\CSkin.xml
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csprojResolveAssemblyReference.cache
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\obj\Debug\mybatis_generate_win.Properties.Resources.resources
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\obj\Debug\mybatis_generate_win.Workbench.resources
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.GenerateResource.cache
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.CoreCompileInputs.cache
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.CopyComplete
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.exe
+C:\Users\ICE FROG\source\repos\mybatis-generate-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.pdb
