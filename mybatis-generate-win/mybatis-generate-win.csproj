@@ -65,6 +65,7 @@
     <Compile Include="util\InputSecurity.cs" />
     <Compile Include="util\NumberUtils.cs" />
     <Compile Include="util\StringUtils.cs" />
+    <Compile Include="util\SystemUtils.cs" />
     <Compile Include="Workbench.cs">
       <SubType>Form</SubType>
     </Compile>

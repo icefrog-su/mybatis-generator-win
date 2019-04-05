@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 
+using mybatis_generate_win.util;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace mybatis_generate_win
@@ -28,6 +30,27 @@ namespace mybatis_generate_win
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Check system version mast be vista or higher
+            if (!SystemUtils.IsWinVistaOrHigher())
+            {
+                MessageBox.Show("Unsupported operating system, use Windows Vista at least.",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Check .NET Framework version
+            if (!SystemUtils.IsSupportedRuntimeVersion())
+            {
+                MessageBox.Show("Unsupported .NET Framework, please update to 4.6.2 or later.",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Process.Start(
+                    "https://www.microsoft.com/download/details.aspx?id=53344");
+                return;
+            }
+
+
             Application.Run(new Workbench());
         }
     }
