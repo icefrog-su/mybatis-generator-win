@@ -91,7 +91,7 @@ namespace mybatis_generate_win.util
                 {
                     SqlServerConnector connector = SqlServerConnector.GetInstance(IP, USER_NAME, PASSWORD, "");
                     DataTable tb = connector.ExecuteDataTable(Database.SQLSERVER_ALL_TABLE_SCRIPT);
-                    tb.Rows[0][0].ToString();
+                    tb.Rows[0]["NAME"].ToString();
                 }
                 else if (DATABASE_TYPE == DataBaseType.Oracle)
                 {
@@ -137,7 +137,7 @@ namespace mybatis_generate_win.util
                     DataTable tb = connector.ExecuteDataTable(Database.SQLSERVER_ALL_TABLE_SCRIPT);
                     for (int i = 0; i < tb.Rows.Count; i++)
                     {
-                        schemes.Add(tb.Rows[i][0].ToString());
+                        schemes.Add(tb.Rows[i]["NAME"].ToString());
                     }
                 }
                 else if (DATABASE_TYPE == DataBaseType.Oracle)

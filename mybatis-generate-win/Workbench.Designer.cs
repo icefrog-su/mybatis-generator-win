@@ -79,6 +79,7 @@
             this.tb_next.BackColor = System.Drawing.Color.Transparent;
             this.tb_next.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.tb_next.DownBack = null;
+            this.tb_next.Enabled = false;
             this.tb_next.Location = new System.Drawing.Point(284, 393);
             this.tb_next.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_next.MouseBack = null;
@@ -120,7 +121,7 @@
             this.skinLabel2.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel2.BorderColor = System.Drawing.Color.White;
             this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel2.Location = new System.Drawing.Point(14, 164);
+            this.skinLabel2.Location = new System.Drawing.Point(14, 159);
             this.skinLabel2.Name = "skinLabel2";
             this.skinLabel2.Size = new System.Drawing.Size(77, 17);
             this.skinLabel2.TabIndex = 3;
@@ -132,7 +133,7 @@
             this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel3.BorderColor = System.Drawing.Color.White;
             this.skinLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel3.Location = new System.Drawing.Point(24, 210);
+            this.skinLabel3.Location = new System.Drawing.Point(24, 205);
             this.skinLabel3.Name = "skinLabel3";
             this.skinLabel3.Size = new System.Drawing.Size(67, 17);
             this.skinLabel3.TabIndex = 4;
@@ -144,7 +145,7 @@
             this.skinLabel4.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel4.BorderColor = System.Drawing.Color.White;
             this.skinLabel4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel4.Location = new System.Drawing.Point(57, 303);
+            this.skinLabel4.Location = new System.Drawing.Point(57, 256);
             this.skinLabel4.Name = "skinLabel4";
             this.skinLabel4.Size = new System.Drawing.Size(34, 17);
             this.skinLabel4.TabIndex = 5;
@@ -160,7 +161,7 @@
             this.txt_userName.IsPasswordChat = '\0';
             this.txt_userName.IsSystemPasswordChar = false;
             this.txt_userName.Lines = new string[0];
-            this.txt_userName.Location = new System.Drawing.Point(97, 160);
+            this.txt_userName.Location = new System.Drawing.Point(97, 155);
             this.txt_userName.Margin = new System.Windows.Forms.Padding(0);
             this.txt_userName.MaxLength = 32767;
             this.txt_userName.MinimumSize = new System.Drawing.Size(28, 28);
@@ -201,7 +202,7 @@
             this.txt_password.IsPasswordChat = '*';
             this.txt_password.IsSystemPasswordChar = false;
             this.txt_password.Lines = new string[0];
-            this.txt_password.Location = new System.Drawing.Point(97, 206);
+            this.txt_password.Location = new System.Drawing.Point(97, 201);
             this.txt_password.Margin = new System.Windows.Forms.Padding(0);
             this.txt_password.MaxLength = 32767;
             this.txt_password.MinimumSize = new System.Drawing.Size(28, 28);
@@ -243,7 +244,7 @@
             this.txt_url.IsPasswordChat = '\0';
             this.txt_url.IsSystemPasswordChar = false;
             this.txt_url.Lines = new string[0];
-            this.txt_url.Location = new System.Drawing.Point(97, 299);
+            this.txt_url.Location = new System.Drawing.Point(97, 252);
             this.txt_url.Margin = new System.Windows.Forms.Padding(0);
             this.txt_url.MaxLength = 32767;
             this.txt_url.MinimumSize = new System.Drawing.Size(28, 28);
@@ -284,7 +285,7 @@
             this.txt_ip.IsPasswordChat = '\0';
             this.txt_ip.IsSystemPasswordChar = false;
             this.txt_ip.Lines = new string[0];
-            this.txt_ip.Location = new System.Drawing.Point(97, 66);
+            this.txt_ip.Location = new System.Drawing.Point(97, 61);
             this.txt_ip.Margin = new System.Windows.Forms.Padding(0);
             this.txt_ip.MaxLength = 32767;
             this.txt_ip.MinimumSize = new System.Drawing.Size(28, 28);
@@ -321,7 +322,7 @@
             this.skinLabel5.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel5.BorderColor = System.Drawing.Color.White;
             this.skinLabel5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel5.Location = new System.Drawing.Point(69, 70);
+            this.skinLabel5.Location = new System.Drawing.Point(69, 65);
             this.skinLabel5.Name = "skinLabel5";
             this.skinLabel5.Size = new System.Drawing.Size(22, 17);
             this.skinLabel5.TabIndex = 9;
@@ -337,7 +338,7 @@
             this.txt_port.IsPasswordChat = '\0';
             this.txt_port.IsSystemPasswordChar = false;
             this.txt_port.Lines = new string[0];
-            this.txt_port.Location = new System.Drawing.Point(97, 113);
+            this.txt_port.Location = new System.Drawing.Point(97, 108);
             this.txt_port.Margin = new System.Windows.Forms.Padding(0);
             this.txt_port.MaxLength = 32767;
             this.txt_port.MinimumSize = new System.Drawing.Size(28, 28);
@@ -374,7 +375,7 @@
             this.skinLabel6.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel6.BorderColor = System.Drawing.Color.White;
             this.skinLabel6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel6.Location = new System.Drawing.Point(56, 116);
+            this.skinLabel6.Location = new System.Drawing.Point(56, 111);
             this.skinLabel6.Name = "skinLabel6";
             this.skinLabel6.Size = new System.Drawing.Size(35, 17);
             this.skinLabel6.TabIndex = 11;
@@ -386,7 +387,7 @@
             this.skinLabel7.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel7.BorderColor = System.Drawing.Color.White;
             this.skinLabel7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel7.Location = new System.Drawing.Point(35, 258);
+            this.skinLabel7.Location = new System.Drawing.Point(35, 303);
             this.skinLabel7.Name = "skinLabel7";
             this.skinLabel7.Size = new System.Drawing.Size(56, 17);
             this.skinLabel7.TabIndex = 14;
@@ -397,7 +398,7 @@
             this.cbx_scheme.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbx_scheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_scheme.FormattingEnabled = true;
-            this.cbx_scheme.Location = new System.Drawing.Point(97, 254);
+            this.cbx_scheme.Location = new System.Drawing.Point(97, 299);
             this.cbx_scheme.Name = "cbx_scheme";
             this.cbx_scheme.Size = new System.Drawing.Size(165, 26);
             this.cbx_scheme.TabIndex = 13;
@@ -408,7 +409,7 @@
             this.btn_initlize.BackColor = System.Drawing.Color.Transparent;
             this.btn_initlize.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.btn_initlize.DownBack = null;
-            this.btn_initlize.Location = new System.Drawing.Point(273, 255);
+            this.btn_initlize.Location = new System.Drawing.Point(273, 300);
             this.btn_initlize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_initlize.MouseBack = null;
             this.btn_initlize.Name = "btn_initlize";
@@ -422,19 +423,20 @@
             // panel_initResource
             // 
             this.panel_initResource.BackColor = System.Drawing.Color.Transparent;
+            this.panel_initResource.Controls.Add(this.panel_generate);
             this.panel_initResource.Controls.Add(this.label_url);
             this.panel_initResource.Controls.Add(this.label_scheme);
             this.panel_initResource.Controls.Add(this.label_password);
             this.panel_initResource.Controls.Add(this.label_userName);
             this.panel_initResource.Controls.Add(this.label_port);
             this.panel_initResource.Controls.Add(this.label_ip);
-            this.panel_initResource.Controls.Add(this.cbx_databaseList);
-            this.panel_initResource.Controls.Add(this.skinLabel1);
-            this.panel_initResource.Controls.Add(this.btn_initlize);
-            this.panel_initResource.Controls.Add(this.skinLabel2);
-            this.panel_initResource.Controls.Add(this.skinLabel7);
-            this.panel_initResource.Controls.Add(this.skinLabel3);
             this.panel_initResource.Controls.Add(this.cbx_scheme);
+            this.panel_initResource.Controls.Add(this.skinLabel7);
+            this.panel_initResource.Controls.Add(this.cbx_databaseList);
+            this.panel_initResource.Controls.Add(this.btn_initlize);
+            this.panel_initResource.Controls.Add(this.skinLabel1);
+            this.panel_initResource.Controls.Add(this.skinLabel2);
+            this.panel_initResource.Controls.Add(this.skinLabel3);
             this.panel_initResource.Controls.Add(this.skinLabel4);
             this.panel_initResource.Controls.Add(this.txt_port);
             this.panel_initResource.Controls.Add(this.txt_userName);
@@ -459,7 +461,7 @@
             this.label_url.BorderColor = System.Drawing.Color.White;
             this.label_url.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_url.ForeColor = System.Drawing.Color.Red;
-            this.label_url.Location = new System.Drawing.Point(96, 327);
+            this.label_url.Location = new System.Drawing.Point(96, 280);
             this.label_url.Name = "label_url";
             this.label_url.Size = new System.Drawing.Size(128, 17);
             this.label_url.TabIndex = 21;
@@ -472,7 +474,7 @@
             this.label_scheme.BorderColor = System.Drawing.Color.White;
             this.label_scheme.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_scheme.ForeColor = System.Drawing.Color.Red;
-            this.label_scheme.Location = new System.Drawing.Point(96, 282);
+            this.label_scheme.Location = new System.Drawing.Point(96, 327);
             this.label_scheme.Name = "label_scheme";
             this.label_scheme.Size = new System.Drawing.Size(147, 17);
             this.label_scheme.TabIndex = 20;
@@ -485,7 +487,7 @@
             this.label_password.BorderColor = System.Drawing.Color.White;
             this.label_password.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_password.ForeColor = System.Drawing.Color.Red;
-            this.label_password.Location = new System.Drawing.Point(94, 234);
+            this.label_password.Location = new System.Drawing.Point(94, 229);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(170, 17);
             this.label_password.TabIndex = 19;
@@ -498,7 +500,7 @@
             this.label_userName.BorderColor = System.Drawing.Color.White;
             this.label_userName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_userName.ForeColor = System.Drawing.Color.Red;
-            this.label_userName.Location = new System.Drawing.Point(94, 188);
+            this.label_userName.Location = new System.Drawing.Point(94, 183);
             this.label_userName.Name = "label_userName";
             this.label_userName.Size = new System.Drawing.Size(174, 17);
             this.label_userName.TabIndex = 18;
@@ -511,7 +513,7 @@
             this.label_port.BorderColor = System.Drawing.Color.White;
             this.label_port.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_port.ForeColor = System.Drawing.Color.Red;
-            this.label_port.Location = new System.Drawing.Point(94, 143);
+            this.label_port.Location = new System.Drawing.Point(94, 138);
             this.label_port.Name = "label_port";
             this.label_port.Size = new System.Drawing.Size(138, 17);
             this.label_port.TabIndex = 17;
@@ -524,7 +526,7 @@
             this.label_ip.BorderColor = System.Drawing.Color.White;
             this.label_ip.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_ip.ForeColor = System.Drawing.Color.Red;
-            this.label_ip.Location = new System.Drawing.Point(94, 94);
+            this.label_ip.Location = new System.Drawing.Point(94, 89);
             this.label_ip.Name = "label_ip";
             this.label_ip.Size = new System.Drawing.Size(175, 17);
             this.label_ip.TabIndex = 16;
@@ -563,7 +565,7 @@
             this.panel_generate.Controls.Add(this.skinLabel20);
             this.panel_generate.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.panel_generate.DownBack = null;
-            this.panel_generate.Location = new System.Drawing.Point(408, 35);
+            this.panel_generate.Location = new System.Drawing.Point(0, 0);
             this.panel_generate.MouseBack = null;
             this.panel_generate.Name = "panel_generate";
             this.panel_generate.NormlBack = null;
@@ -910,8 +912,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 629);
-            this.Controls.Add(this.panel_generate);
+            this.ClientSize = new System.Drawing.Size(390, 430);
             this.Controls.Add(this.label_connectStatus);
             this.Controls.Add(this.panel_initResource);
             this.Controls.Add(this.tb_next);

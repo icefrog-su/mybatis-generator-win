@@ -15,18 +15,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using CCWin;
 using mybatis_generate_win.util;
 
 namespace mybatis_generate_win
 {
-    // use the mac style(CSKin DLL)
+    // Use the mac style(CSKin DLL)
     public partial class Workbench : Skin_Mac
     {
         /// <summary>
@@ -135,6 +131,12 @@ namespace mybatis_generate_win
         private void btn_initlize_Click(object sender, EventArgs e)
         {
 
+            bool checkResult = CheckInput(false);
+            if (!checkResult)
+            {
+                return;
+            }
+
             string databaseSel = cbx_databaseList.Text;
             string ipAddr = txt_ip.Text;
             string port = txt_port.Text;
@@ -211,6 +213,23 @@ namespace mybatis_generate_win
         /// <param name="e">EventArgs</param>
         private void tb_next_Click(object sender, EventArgs e)
         {
+
+            var result = CheckInput(true);
+            if (!result)
+            {
+                return;
+            }
+
+            // hidden the init panage and show the generate panel
+            // panel_initResource.Hide();
+            panel_generate.Show();
+
+            label_connectStatus.Hide();
+            tb_next.Text = "Serialize";
+        }
+
+        private bool CheckInput(bool isNextEvent)
+        {
             string databaseSel = cbx_databaseList.Text;
             string ipAddr = txt_ip.Text;
             string port = txt_port.Text;
@@ -231,14 +250,14 @@ namespace mybatis_generate_win
                 string noIpTitle = "Please enter the IP address !";
                 label_ip.Show();
                 label_ip.Text = noIpTitle;
-                return;
+                return false;
             }
             if (!InputSecurity.isIp(ipAddr))
             {
                 string ipNotAllow = "Illegal ip address !";
                 label_ip.Show();
                 label_ip.Text = ipNotAllow;
-                return;
+                return false;
             }
             label_ip.Hide();
             // port
@@ -247,14 +266,14 @@ namespace mybatis_generate_win
                 string noPortTitle = "Please enter the port !";
                 label_port.Show();
                 label_port.Text = noPortTitle;
-                return;
+                return false;
             }
             if (!NumberUtils.IsNumber(port) && !NumberUtils.IsSection(1, 65532, Int32.Parse(port)))
             {
                 string noPortTitle = "Illegal port !";
                 label_port.Show();
                 label_port.Text = noPortTitle;
-                return;
+                return false;
             }
             label_port.Hide();
             // user name
@@ -263,7 +282,7 @@ namespace mybatis_generate_win
                 string noUserNameTitle = "Please enter the user name !";
                 label_userName.Show();
                 label_userName.Text = noUserNameTitle;
-                return;
+                return false;
             }
             label_userName.Hide();
             // password
@@ -272,18 +291,18 @@ namespace mybatis_generate_win
                 string noPasswordTitle = "Please enter the user name !";
                 label_password.Show();
                 label_password.Text = noPasswordTitle;
-                return;
+                return false;
             }
             label_password.Hide();
             // if not oracle, check the scheme
-            if (!IsOracle)
+            if (!IsOracle && isNextEvent)
             {
                 if (StringUtils.isEmpty(scheme))
                 {
                     string noSchemeTitle = "Please choose scheme !";
                     label_scheme.Show();
                     label_scheme.Text = noSchemeTitle;
-                    return;
+                    return false;
                 }
             }
             label_scheme.Hide();
@@ -293,19 +312,10 @@ namespace mybatis_generate_win
                 string noUrlTitle = "Please enter the url !";
                 label_url.Show();
                 label_url.Text = noUrlTitle;
-                return;
+                return false;
             }
             label_url.Hide();
-
-            // is oracle, remind test connect
-            if (IsOracle)
-            {
-                MessageBox.Show("is oracle");
-            }
-
-            // hidden the init panage and show the generate panel
-            panel_initResource.Hide();
-            panel_generate.Show();
+            return true;
         }
     }
 }
