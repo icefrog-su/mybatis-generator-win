@@ -140,11 +140,15 @@ namespace mybatis_generate_win
                 // Modity the test tag
                 IsTest = true;
                 MessageBox.Show("test the connect(oracle not be has a scheme)");
+
             }
             else
             {
                 // Init the scheme info (sqlserver or mysql) can be test the connect before
                 MessageBox.Show("initialize the all scheme and test the connect");
+
+                // Query all current connect's database(scheme) information
+
             }
 
         }
