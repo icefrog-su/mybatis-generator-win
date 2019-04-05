@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 /// <summary>
 /// namespace with util
 /// </summary>
@@ -99,11 +94,6 @@ namespace mybatis_generate_win.util
 
         ////////////////////////////////////////////////////
 
-
-        //LOG THIS CONFIGURATION INFORMATION
-        public static string ConnectionString;
-        public static string ConnectionDatabase;
-        public static string dbversion;
 
         //SELECT ORACLE/MYSQL/SQLSERVER DATABASE'S ALL DATABASE OR USER T-SQL/PL-SQL SCRIPT
         /// <summary>
