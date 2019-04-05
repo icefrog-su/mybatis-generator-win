@@ -21,3 +21,5 @@ C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win
 C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.CopyComplete
 C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.exe
 C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.pdb
+C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win\bin\Debug\mysql.data.dll
+C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win\bin\Debug\Oracle.ManagedDataAccess.dll

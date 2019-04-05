@@ -98,7 +98,7 @@ namespace mybatis_generate_win.database
             }
         }
 
-        public DataSet ExecuteDataSet(string sql)
+        public override DataSet ExecuteDataSet(string sql)
         {
             try
             {
@@ -113,14 +113,14 @@ namespace mybatis_generate_win.database
             }
         }
 
-        public DataTable ExecuteDataTable(string sql)
+        public override DataTable ExecuteDataTable(string sql)
         {
             DataTable dt = new DataTable();
             dt = ExecuteDataSet(sql).Tables[0];
             return dt;
         }
 
-        public DataRow ExecuteDataRow(string sql)
+        public override DataRow ExecuteDataRow(string sql)
         {
             DataRow dr;
             dr = ExecuteDataSet(sql).Tables[0].Rows[0];
