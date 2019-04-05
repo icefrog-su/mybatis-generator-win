@@ -55,7 +55,7 @@ namespace mybatis_generate_win.database
             }
             catch
             {
-                return -1;
+                throw new NotSupportedException("Oracle operation abnormal, please check the connection");
             }
             finally
             {
@@ -73,9 +73,8 @@ namespace mybatis_generate_win.database
                 return obj;
             }
             catch
-            { 
-                Console.WriteLine("Simple select happend exception");
-                return null;
+            {
+                throw new NotSupportedException("Oracle operation abnormal, please check the connection");
             }
             finally
             {
@@ -93,8 +92,8 @@ namespace mybatis_generate_win.database
                 return reader;
             }
             catch
-            { 
-                return null;
+            {
+                throw new NotSupportedException("Oracle operation abnormal, please check the connection");
             }
         }
 
@@ -108,8 +107,8 @@ namespace mybatis_generate_win.database
                 return ds;
             }
             catch
-            { 
-                return null;
+            {
+                throw new NotSupportedException("Oracle operation abnormal, please check the connection");
             }
         }
 

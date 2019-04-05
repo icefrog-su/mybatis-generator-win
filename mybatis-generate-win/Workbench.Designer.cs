@@ -55,21 +55,21 @@
             this.label_ip = new CCWin.SkinControl.SkinLabel();
             this.label_connectStatus = new CCWin.SkinControl.SkinLabel();
             this.panel_generate = new CCWin.SkinControl.SkinPanel();
+            this.cbx_tables = new CCWin.SkinControl.SkinComboBox();
+            this.skinLabel10 = new CCWin.SkinControl.SkinLabel();
+            this.txt_mapperPackage = new CCWin.SkinControl.SkinTextBox();
+            this.skinLabel9 = new CCWin.SkinControl.SkinLabel();
+            this.txt_daoPackage = new CCWin.SkinControl.SkinTextBox();
+            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
+            this.cb_useActualColumnNames = new CCWin.SkinControl.SkinCheckBox();
+            this.cb_trimStrings = new CCWin.SkinControl.SkinCheckBox();
+            this.cb_enableSubPackages = new CCWin.SkinControl.SkinCheckBox();
+            this.cb_forceBbigDecimals = new CCWin.SkinControl.SkinCheckBox();
+            this.cb_removeComment = new CCWin.SkinControl.SkinCheckBox();
+            this.txt_targetRuntime = new CCWin.SkinControl.SkinTextBox();
             this.skinLabel14 = new CCWin.SkinControl.SkinLabel();
             this.txt_modelPackage = new CCWin.SkinControl.SkinTextBox();
             this.skinLabel20 = new CCWin.SkinControl.SkinLabel();
-            this.txt_targetRuntime = new CCWin.SkinControl.SkinTextBox();
-            this.cb_removeComment = new CCWin.SkinControl.SkinCheckBox();
-            this.cb_forceBbigDecimals = new CCWin.SkinControl.SkinCheckBox();
-            this.cb_enableSubPackages = new CCWin.SkinControl.SkinCheckBox();
-            this.cb_trimStrings = new CCWin.SkinControl.SkinCheckBox();
-            this.cb_useActualColumnNames = new CCWin.SkinControl.SkinCheckBox();
-            this.txt_daoPackage = new CCWin.SkinControl.SkinTextBox();
-            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
-            this.txt_mapperPackage = new CCWin.SkinControl.SkinTextBox();
-            this.skinLabel9 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel10 = new CCWin.SkinControl.SkinLabel();
-            this.cbx_tables = new CCWin.SkinControl.SkinComboBox();
             this.panel_initResource.SuspendLayout();
             this.panel_generate.SuspendLayout();
             this.SuspendLayout();
@@ -198,7 +198,7 @@
             this.txt_password.Icon = null;
             this.txt_password.IconIsButton = false;
             this.txt_password.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_password.IsPasswordChat = '\0';
+            this.txt_password.IsPasswordChat = '*';
             this.txt_password.IsSystemPasswordChar = false;
             this.txt_password.Lines = new string[0];
             this.txt_password.Location = new System.Drawing.Point(97, 206);
@@ -222,6 +222,7 @@
             this.txt_password.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txt_password.SkinTxt.Location = new System.Drawing.Point(5, 5);
             this.txt_password.SkinTxt.Name = "BaseText";
+            this.txt_password.SkinTxt.PasswordChar = '*';
             this.txt_password.SkinTxt.Size = new System.Drawing.Size(232, 18);
             this.txt_password.SkinTxt.TabIndex = 0;
             this.txt_password.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
@@ -394,6 +395,7 @@
             // cbx_scheme
             // 
             this.cbx_scheme.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbx_scheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_scheme.FormattingEnabled = true;
             this.cbx_scheme.Location = new System.Drawing.Point(97, 254);
             this.cbx_scheme.Name = "cbx_scheme";
@@ -568,6 +570,277 @@
             this.panel_generate.Size = new System.Drawing.Size(349, 351);
             this.panel_generate.TabIndex = 23;
             // 
+            // cbx_tables
+            // 
+            this.cbx_tables.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbx_tables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_tables.FormattingEnabled = true;
+            this.cbx_tables.Location = new System.Drawing.Point(122, 174);
+            this.cbx_tables.Name = "cbx_tables";
+            this.cbx_tables.Size = new System.Drawing.Size(206, 26);
+            this.cbx_tables.TabIndex = 22;
+            this.cbx_tables.WaterText = "";
+            // 
+            // skinLabel10
+            // 
+            this.skinLabel10.AutoSize = true;
+            this.skinLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel10.BorderColor = System.Drawing.Color.White;
+            this.skinLabel10.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel10.Location = new System.Drawing.Point(69, 179);
+            this.skinLabel10.Name = "skinLabel10";
+            this.skinLabel10.Size = new System.Drawing.Size(49, 17);
+            this.skinLabel10.TabIndex = 21;
+            this.skinLabel10.Text = "Tables:";
+            // 
+            // txt_mapperPackage
+            // 
+            this.txt_mapperPackage.BackColor = System.Drawing.Color.Transparent;
+            this.txt_mapperPackage.DownBack = null;
+            this.txt_mapperPackage.Icon = null;
+            this.txt_mapperPackage.IconIsButton = false;
+            this.txt_mapperPackage.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.txt_mapperPackage.IsPasswordChat = '\0';
+            this.txt_mapperPackage.IsSystemPasswordChar = false;
+            this.txt_mapperPackage.Lines = new string[0];
+            this.txt_mapperPackage.Location = new System.Drawing.Point(122, 136);
+            this.txt_mapperPackage.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_mapperPackage.MaxLength = 32767;
+            this.txt_mapperPackage.MinimumSize = new System.Drawing.Size(28, 28);
+            this.txt_mapperPackage.MouseBack = null;
+            this.txt_mapperPackage.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.txt_mapperPackage.Multiline = false;
+            this.txt_mapperPackage.Name = "txt_mapperPackage";
+            this.txt_mapperPackage.NormlBack = null;
+            this.txt_mapperPackage.Padding = new System.Windows.Forms.Padding(5);
+            this.txt_mapperPackage.ReadOnly = false;
+            this.txt_mapperPackage.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_mapperPackage.Size = new System.Drawing.Size(206, 28);
+            // 
+            // 
+            // 
+            this.txt_mapperPackage.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_mapperPackage.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_mapperPackage.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.txt_mapperPackage.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.txt_mapperPackage.SkinTxt.Name = "BaseText";
+            this.txt_mapperPackage.SkinTxt.Size = new System.Drawing.Size(196, 18);
+            this.txt_mapperPackage.SkinTxt.TabIndex = 0;
+            this.txt_mapperPackage.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txt_mapperPackage.SkinTxt.WaterText = "";
+            this.txt_mapperPackage.TabIndex = 20;
+            this.txt_mapperPackage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_mapperPackage.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txt_mapperPackage.WaterText = "";
+            this.txt_mapperPackage.WordWrap = true;
+            // 
+            // skinLabel9
+            // 
+            this.skinLabel9.AutoSize = true;
+            this.skinLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel9.BorderColor = System.Drawing.Color.White;
+            this.skinLabel9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel9.Location = new System.Drawing.Point(6, 140);
+            this.skinLabel9.Name = "skinLabel9";
+            this.skinLabel9.Size = new System.Drawing.Size(112, 17);
+            this.skinLabel9.TabIndex = 19;
+            this.skinLabel9.Text = "Mapper package:";
+            // 
+            // txt_daoPackage
+            // 
+            this.txt_daoPackage.BackColor = System.Drawing.Color.Transparent;
+            this.txt_daoPackage.DownBack = null;
+            this.txt_daoPackage.Icon = null;
+            this.txt_daoPackage.IconIsButton = false;
+            this.txt_daoPackage.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.txt_daoPackage.IsPasswordChat = '\0';
+            this.txt_daoPackage.IsSystemPasswordChar = false;
+            this.txt_daoPackage.Lines = new string[0];
+            this.txt_daoPackage.Location = new System.Drawing.Point(122, 99);
+            this.txt_daoPackage.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_daoPackage.MaxLength = 32767;
+            this.txt_daoPackage.MinimumSize = new System.Drawing.Size(28, 28);
+            this.txt_daoPackage.MouseBack = null;
+            this.txt_daoPackage.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.txt_daoPackage.Multiline = false;
+            this.txt_daoPackage.Name = "txt_daoPackage";
+            this.txt_daoPackage.NormlBack = null;
+            this.txt_daoPackage.Padding = new System.Windows.Forms.Padding(5);
+            this.txt_daoPackage.ReadOnly = false;
+            this.txt_daoPackage.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_daoPackage.Size = new System.Drawing.Size(206, 28);
+            // 
+            // 
+            // 
+            this.txt_daoPackage.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_daoPackage.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_daoPackage.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.txt_daoPackage.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.txt_daoPackage.SkinTxt.Name = "BaseText";
+            this.txt_daoPackage.SkinTxt.Size = new System.Drawing.Size(196, 18);
+            this.txt_daoPackage.SkinTxt.TabIndex = 0;
+            this.txt_daoPackage.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txt_daoPackage.SkinTxt.WaterText = "";
+            this.txt_daoPackage.TabIndex = 18;
+            this.txt_daoPackage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_daoPackage.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txt_daoPackage.WaterText = "";
+            this.txt_daoPackage.WordWrap = true;
+            // 
+            // skinLabel8
+            // 
+            this.skinLabel8.AutoSize = true;
+            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel8.BorderColor = System.Drawing.Color.White;
+            this.skinLabel8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel8.Location = new System.Drawing.Point(29, 103);
+            this.skinLabel8.Name = "skinLabel8";
+            this.skinLabel8.Size = new System.Drawing.Size(89, 17);
+            this.skinLabel8.TabIndex = 17;
+            this.skinLabel8.Text = "Dao package:";
+            // 
+            // cb_useActualColumnNames
+            // 
+            this.cb_useActualColumnNames.AutoSize = true;
+            this.cb_useActualColumnNames.BackColor = System.Drawing.Color.Transparent;
+            this.cb_useActualColumnNames.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.cb_useActualColumnNames.DownBack = null;
+            this.cb_useActualColumnNames.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cb_useActualColumnNames.Location = new System.Drawing.Point(122, 311);
+            this.cb_useActualColumnNames.MouseBack = null;
+            this.cb_useActualColumnNames.Name = "cb_useActualColumnNames";
+            this.cb_useActualColumnNames.NormlBack = null;
+            this.cb_useActualColumnNames.SelectedDownBack = null;
+            this.cb_useActualColumnNames.SelectedMouseBack = null;
+            this.cb_useActualColumnNames.SelectedNormlBack = null;
+            this.cb_useActualColumnNames.Size = new System.Drawing.Size(177, 21);
+            this.cb_useActualColumnNames.TabIndex = 16;
+            this.cb_useActualColumnNames.Text = "Use Actual ColumnNames";
+            this.cb_useActualColumnNames.UseVisualStyleBackColor = false;
+            // 
+            // cb_trimStrings
+            // 
+            this.cb_trimStrings.AutoSize = true;
+            this.cb_trimStrings.BackColor = System.Drawing.Color.Transparent;
+            this.cb_trimStrings.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.cb_trimStrings.DownBack = null;
+            this.cb_trimStrings.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cb_trimStrings.Location = new System.Drawing.Point(122, 284);
+            this.cb_trimStrings.MouseBack = null;
+            this.cb_trimStrings.Name = "cb_trimStrings";
+            this.cb_trimStrings.NormlBack = null;
+            this.cb_trimStrings.SelectedDownBack = null;
+            this.cb_trimStrings.SelectedMouseBack = null;
+            this.cb_trimStrings.SelectedNormlBack = null;
+            this.cb_trimStrings.Size = new System.Drawing.Size(97, 21);
+            this.cb_trimStrings.TabIndex = 15;
+            this.cb_trimStrings.Text = "Trim Strings";
+            this.cb_trimStrings.UseVisualStyleBackColor = false;
+            // 
+            // cb_enableSubPackages
+            // 
+            this.cb_enableSubPackages.AutoSize = true;
+            this.cb_enableSubPackages.BackColor = System.Drawing.Color.Transparent;
+            this.cb_enableSubPackages.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.cb_enableSubPackages.DownBack = null;
+            this.cb_enableSubPackages.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cb_enableSubPackages.Location = new System.Drawing.Point(122, 257);
+            this.cb_enableSubPackages.MouseBack = null;
+            this.cb_enableSubPackages.Name = "cb_enableSubPackages";
+            this.cb_enableSubPackages.NormlBack = null;
+            this.cb_enableSubPackages.SelectedDownBack = null;
+            this.cb_enableSubPackages.SelectedMouseBack = null;
+            this.cb_enableSubPackages.SelectedNormlBack = null;
+            this.cb_enableSubPackages.Size = new System.Drawing.Size(147, 21);
+            this.cb_enableSubPackages.TabIndex = 14;
+            this.cb_enableSubPackages.Text = "Enable SubPackages";
+            this.cb_enableSubPackages.UseVisualStyleBackColor = false;
+            // 
+            // cb_forceBbigDecimals
+            // 
+            this.cb_forceBbigDecimals.AutoSize = true;
+            this.cb_forceBbigDecimals.BackColor = System.Drawing.Color.Transparent;
+            this.cb_forceBbigDecimals.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.cb_forceBbigDecimals.DownBack = null;
+            this.cb_forceBbigDecimals.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cb_forceBbigDecimals.Location = new System.Drawing.Point(122, 230);
+            this.cb_forceBbigDecimals.MouseBack = null;
+            this.cb_forceBbigDecimals.Name = "cb_forceBbigDecimals";
+            this.cb_forceBbigDecimals.NormlBack = null;
+            this.cb_forceBbigDecimals.SelectedDownBack = null;
+            this.cb_forceBbigDecimals.SelectedMouseBack = null;
+            this.cb_forceBbigDecimals.SelectedNormlBack = null;
+            this.cb_forceBbigDecimals.Size = new System.Drawing.Size(134, 21);
+            this.cb_forceBbigDecimals.TabIndex = 13;
+            this.cb_forceBbigDecimals.Text = "Force BigDecimals";
+            this.cb_forceBbigDecimals.UseVisualStyleBackColor = false;
+            // 
+            // cb_removeComment
+            // 
+            this.cb_removeComment.AutoSize = true;
+            this.cb_removeComment.BackColor = System.Drawing.Color.Transparent;
+            this.cb_removeComment.Checked = true;
+            this.cb_removeComment.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_removeComment.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.cb_removeComment.DownBack = null;
+            this.cb_removeComment.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cb_removeComment.Location = new System.Drawing.Point(122, 205);
+            this.cb_removeComment.MouseBack = null;
+            this.cb_removeComment.Name = "cb_removeComment";
+            this.cb_removeComment.NormlBack = null;
+            this.cb_removeComment.SelectedDownBack = null;
+            this.cb_removeComment.SelectedMouseBack = null;
+            this.cb_removeComment.SelectedNormlBack = null;
+            this.cb_removeComment.Size = new System.Drawing.Size(154, 21);
+            this.cb_removeComment.TabIndex = 12;
+            this.cb_removeComment.Text = "Remove the comment";
+            this.cb_removeComment.UseVisualStyleBackColor = false;
+            // 
+            // txt_targetRuntime
+            // 
+            this.txt_targetRuntime.BackColor = System.Drawing.Color.Transparent;
+            this.txt_targetRuntime.DownBack = null;
+            this.txt_targetRuntime.Icon = null;
+            this.txt_targetRuntime.IconIsButton = false;
+            this.txt_targetRuntime.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.txt_targetRuntime.IsPasswordChat = '\0';
+            this.txt_targetRuntime.IsSystemPasswordChar = false;
+            this.txt_targetRuntime.Lines = new string[] {
+        "MyBatis3"};
+            this.txt_targetRuntime.Location = new System.Drawing.Point(122, 22);
+            this.txt_targetRuntime.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_targetRuntime.MaxLength = 32767;
+            this.txt_targetRuntime.MinimumSize = new System.Drawing.Size(28, 28);
+            this.txt_targetRuntime.MouseBack = null;
+            this.txt_targetRuntime.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.txt_targetRuntime.Multiline = false;
+            this.txt_targetRuntime.Name = "txt_targetRuntime";
+            this.txt_targetRuntime.NormlBack = null;
+            this.txt_targetRuntime.Padding = new System.Windows.Forms.Padding(5);
+            this.txt_targetRuntime.ReadOnly = true;
+            this.txt_targetRuntime.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_targetRuntime.Size = new System.Drawing.Size(206, 28);
+            // 
+            // 
+            // 
+            this.txt_targetRuntime.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_targetRuntime.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_targetRuntime.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.txt_targetRuntime.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.txt_targetRuntime.SkinTxt.Name = "BaseText";
+            this.txt_targetRuntime.SkinTxt.ReadOnly = true;
+            this.txt_targetRuntime.SkinTxt.Size = new System.Drawing.Size(196, 18);
+            this.txt_targetRuntime.SkinTxt.TabIndex = 0;
+            this.txt_targetRuntime.SkinTxt.Text = "MyBatis3";
+            this.txt_targetRuntime.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txt_targetRuntime.SkinTxt.WaterText = "";
+            this.txt_targetRuntime.TabIndex = 11;
+            this.txt_targetRuntime.Text = "MyBatis3";
+            this.txt_targetRuntime.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_targetRuntime.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txt_targetRuntime.WaterText = "";
+            this.txt_targetRuntime.WordWrap = true;
+            // 
             // skinLabel14
             // 
             this.skinLabel14.AutoSize = true;
@@ -632,277 +905,6 @@
             this.skinLabel20.Size = new System.Drawing.Size(103, 17);
             this.skinLabel20.TabIndex = 9;
             this.skinLabel20.Text = "Model package:";
-            // 
-            // txt_targetRuntime
-            // 
-            this.txt_targetRuntime.BackColor = System.Drawing.Color.Transparent;
-            this.txt_targetRuntime.DownBack = null;
-            this.txt_targetRuntime.Icon = null;
-            this.txt_targetRuntime.IconIsButton = false;
-            this.txt_targetRuntime.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_targetRuntime.IsPasswordChat = '\0';
-            this.txt_targetRuntime.IsSystemPasswordChar = false;
-            this.txt_targetRuntime.Lines = new string[] {
-        "MyBatis3"};
-            this.txt_targetRuntime.Location = new System.Drawing.Point(122, 22);
-            this.txt_targetRuntime.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_targetRuntime.MaxLength = 32767;
-            this.txt_targetRuntime.MinimumSize = new System.Drawing.Size(28, 28);
-            this.txt_targetRuntime.MouseBack = null;
-            this.txt_targetRuntime.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_targetRuntime.Multiline = false;
-            this.txt_targetRuntime.Name = "txt_targetRuntime";
-            this.txt_targetRuntime.NormlBack = null;
-            this.txt_targetRuntime.Padding = new System.Windows.Forms.Padding(5);
-            this.txt_targetRuntime.ReadOnly = true;
-            this.txt_targetRuntime.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_targetRuntime.Size = new System.Drawing.Size(206, 28);
-            // 
-            // 
-            // 
-            this.txt_targetRuntime.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_targetRuntime.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_targetRuntime.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.txt_targetRuntime.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.txt_targetRuntime.SkinTxt.Name = "BaseText";
-            this.txt_targetRuntime.SkinTxt.ReadOnly = true;
-            this.txt_targetRuntime.SkinTxt.Size = new System.Drawing.Size(196, 18);
-            this.txt_targetRuntime.SkinTxt.TabIndex = 0;
-            this.txt_targetRuntime.SkinTxt.Text = "MyBatis3";
-            this.txt_targetRuntime.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txt_targetRuntime.SkinTxt.WaterText = "";
-            this.txt_targetRuntime.TabIndex = 11;
-            this.txt_targetRuntime.Text = "MyBatis3";
-            this.txt_targetRuntime.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_targetRuntime.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txt_targetRuntime.WaterText = "";
-            this.txt_targetRuntime.WordWrap = true;
-            // 
-            // cb_removeComment
-            // 
-            this.cb_removeComment.AutoSize = true;
-            this.cb_removeComment.BackColor = System.Drawing.Color.Transparent;
-            this.cb_removeComment.Checked = true;
-            this.cb_removeComment.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_removeComment.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.cb_removeComment.DownBack = null;
-            this.cb_removeComment.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cb_removeComment.Location = new System.Drawing.Point(122, 205);
-            this.cb_removeComment.MouseBack = null;
-            this.cb_removeComment.Name = "cb_removeComment";
-            this.cb_removeComment.NormlBack = null;
-            this.cb_removeComment.SelectedDownBack = null;
-            this.cb_removeComment.SelectedMouseBack = null;
-            this.cb_removeComment.SelectedNormlBack = null;
-            this.cb_removeComment.Size = new System.Drawing.Size(154, 21);
-            this.cb_removeComment.TabIndex = 12;
-            this.cb_removeComment.Text = "Remove the comment";
-            this.cb_removeComment.UseVisualStyleBackColor = false;
-            // 
-            // cb_forceBbigDecimals
-            // 
-            this.cb_forceBbigDecimals.AutoSize = true;
-            this.cb_forceBbigDecimals.BackColor = System.Drawing.Color.Transparent;
-            this.cb_forceBbigDecimals.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.cb_forceBbigDecimals.DownBack = null;
-            this.cb_forceBbigDecimals.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cb_forceBbigDecimals.Location = new System.Drawing.Point(122, 230);
-            this.cb_forceBbigDecimals.MouseBack = null;
-            this.cb_forceBbigDecimals.Name = "cb_forceBbigDecimals";
-            this.cb_forceBbigDecimals.NormlBack = null;
-            this.cb_forceBbigDecimals.SelectedDownBack = null;
-            this.cb_forceBbigDecimals.SelectedMouseBack = null;
-            this.cb_forceBbigDecimals.SelectedNormlBack = null;
-            this.cb_forceBbigDecimals.Size = new System.Drawing.Size(134, 21);
-            this.cb_forceBbigDecimals.TabIndex = 13;
-            this.cb_forceBbigDecimals.Text = "Force BigDecimals";
-            this.cb_forceBbigDecimals.UseVisualStyleBackColor = false;
-            // 
-            // cb_enableSubPackages
-            // 
-            this.cb_enableSubPackages.AutoSize = true;
-            this.cb_enableSubPackages.BackColor = System.Drawing.Color.Transparent;
-            this.cb_enableSubPackages.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.cb_enableSubPackages.DownBack = null;
-            this.cb_enableSubPackages.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cb_enableSubPackages.Location = new System.Drawing.Point(122, 257);
-            this.cb_enableSubPackages.MouseBack = null;
-            this.cb_enableSubPackages.Name = "cb_enableSubPackages";
-            this.cb_enableSubPackages.NormlBack = null;
-            this.cb_enableSubPackages.SelectedDownBack = null;
-            this.cb_enableSubPackages.SelectedMouseBack = null;
-            this.cb_enableSubPackages.SelectedNormlBack = null;
-            this.cb_enableSubPackages.Size = new System.Drawing.Size(147, 21);
-            this.cb_enableSubPackages.TabIndex = 14;
-            this.cb_enableSubPackages.Text = "Enable SubPackages";
-            this.cb_enableSubPackages.UseVisualStyleBackColor = false;
-            // 
-            // cb_trimStrings
-            // 
-            this.cb_trimStrings.AutoSize = true;
-            this.cb_trimStrings.BackColor = System.Drawing.Color.Transparent;
-            this.cb_trimStrings.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.cb_trimStrings.DownBack = null;
-            this.cb_trimStrings.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cb_trimStrings.Location = new System.Drawing.Point(122, 284);
-            this.cb_trimStrings.MouseBack = null;
-            this.cb_trimStrings.Name = "cb_trimStrings";
-            this.cb_trimStrings.NormlBack = null;
-            this.cb_trimStrings.SelectedDownBack = null;
-            this.cb_trimStrings.SelectedMouseBack = null;
-            this.cb_trimStrings.SelectedNormlBack = null;
-            this.cb_trimStrings.Size = new System.Drawing.Size(97, 21);
-            this.cb_trimStrings.TabIndex = 15;
-            this.cb_trimStrings.Text = "Trim Strings";
-            this.cb_trimStrings.UseVisualStyleBackColor = false;
-            // 
-            // cb_useActualColumnNames
-            // 
-            this.cb_useActualColumnNames.AutoSize = true;
-            this.cb_useActualColumnNames.BackColor = System.Drawing.Color.Transparent;
-            this.cb_useActualColumnNames.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.cb_useActualColumnNames.DownBack = null;
-            this.cb_useActualColumnNames.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cb_useActualColumnNames.Location = new System.Drawing.Point(122, 311);
-            this.cb_useActualColumnNames.MouseBack = null;
-            this.cb_useActualColumnNames.Name = "cb_useActualColumnNames";
-            this.cb_useActualColumnNames.NormlBack = null;
-            this.cb_useActualColumnNames.SelectedDownBack = null;
-            this.cb_useActualColumnNames.SelectedMouseBack = null;
-            this.cb_useActualColumnNames.SelectedNormlBack = null;
-            this.cb_useActualColumnNames.Size = new System.Drawing.Size(177, 21);
-            this.cb_useActualColumnNames.TabIndex = 16;
-            this.cb_useActualColumnNames.Text = "Use Actual ColumnNames";
-            this.cb_useActualColumnNames.UseVisualStyleBackColor = false;
-            // 
-            // txt_daoPackage
-            // 
-            this.txt_daoPackage.BackColor = System.Drawing.Color.Transparent;
-            this.txt_daoPackage.DownBack = null;
-            this.txt_daoPackage.Icon = null;
-            this.txt_daoPackage.IconIsButton = false;
-            this.txt_daoPackage.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_daoPackage.IsPasswordChat = '\0';
-            this.txt_daoPackage.IsSystemPasswordChar = false;
-            this.txt_daoPackage.Lines = new string[0];
-            this.txt_daoPackage.Location = new System.Drawing.Point(122, 99);
-            this.txt_daoPackage.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_daoPackage.MaxLength = 32767;
-            this.txt_daoPackage.MinimumSize = new System.Drawing.Size(28, 28);
-            this.txt_daoPackage.MouseBack = null;
-            this.txt_daoPackage.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_daoPackage.Multiline = false;
-            this.txt_daoPackage.Name = "txt_daoPackage";
-            this.txt_daoPackage.NormlBack = null;
-            this.txt_daoPackage.Padding = new System.Windows.Forms.Padding(5);
-            this.txt_daoPackage.ReadOnly = false;
-            this.txt_daoPackage.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_daoPackage.Size = new System.Drawing.Size(206, 28);
-            // 
-            // 
-            // 
-            this.txt_daoPackage.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_daoPackage.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_daoPackage.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.txt_daoPackage.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.txt_daoPackage.SkinTxt.Name = "BaseText";
-            this.txt_daoPackage.SkinTxt.Size = new System.Drawing.Size(196, 18);
-            this.txt_daoPackage.SkinTxt.TabIndex = 0;
-            this.txt_daoPackage.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txt_daoPackage.SkinTxt.WaterText = "";
-            this.txt_daoPackage.TabIndex = 18;
-            this.txt_daoPackage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_daoPackage.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txt_daoPackage.WaterText = "";
-            this.txt_daoPackage.WordWrap = true;
-            // 
-            // skinLabel8
-            // 
-            this.skinLabel8.AutoSize = true;
-            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel8.BorderColor = System.Drawing.Color.White;
-            this.skinLabel8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel8.Location = new System.Drawing.Point(29, 103);
-            this.skinLabel8.Name = "skinLabel8";
-            this.skinLabel8.Size = new System.Drawing.Size(89, 17);
-            this.skinLabel8.TabIndex = 17;
-            this.skinLabel8.Text = "Dao package:";
-            // 
-            // txt_mapperPackage
-            // 
-            this.txt_mapperPackage.BackColor = System.Drawing.Color.Transparent;
-            this.txt_mapperPackage.DownBack = null;
-            this.txt_mapperPackage.Icon = null;
-            this.txt_mapperPackage.IconIsButton = false;
-            this.txt_mapperPackage.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_mapperPackage.IsPasswordChat = '\0';
-            this.txt_mapperPackage.IsSystemPasswordChar = false;
-            this.txt_mapperPackage.Lines = new string[0];
-            this.txt_mapperPackage.Location = new System.Drawing.Point(122, 136);
-            this.txt_mapperPackage.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_mapperPackage.MaxLength = 32767;
-            this.txt_mapperPackage.MinimumSize = new System.Drawing.Size(28, 28);
-            this.txt_mapperPackage.MouseBack = null;
-            this.txt_mapperPackage.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_mapperPackage.Multiline = false;
-            this.txt_mapperPackage.Name = "txt_mapperPackage";
-            this.txt_mapperPackage.NormlBack = null;
-            this.txt_mapperPackage.Padding = new System.Windows.Forms.Padding(5);
-            this.txt_mapperPackage.ReadOnly = false;
-            this.txt_mapperPackage.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_mapperPackage.Size = new System.Drawing.Size(206, 28);
-            // 
-            // 
-            // 
-            this.txt_mapperPackage.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_mapperPackage.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_mapperPackage.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.txt_mapperPackage.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.txt_mapperPackage.SkinTxt.Name = "BaseText";
-            this.txt_mapperPackage.SkinTxt.Size = new System.Drawing.Size(196, 18);
-            this.txt_mapperPackage.SkinTxt.TabIndex = 0;
-            this.txt_mapperPackage.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txt_mapperPackage.SkinTxt.WaterText = "";
-            this.txt_mapperPackage.TabIndex = 20;
-            this.txt_mapperPackage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_mapperPackage.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txt_mapperPackage.WaterText = "";
-            this.txt_mapperPackage.WordWrap = true;
-            // 
-            // skinLabel9
-            // 
-            this.skinLabel9.AutoSize = true;
-            this.skinLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel9.BorderColor = System.Drawing.Color.White;
-            this.skinLabel9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel9.Location = new System.Drawing.Point(6, 140);
-            this.skinLabel9.Name = "skinLabel9";
-            this.skinLabel9.Size = new System.Drawing.Size(112, 17);
-            this.skinLabel9.TabIndex = 19;
-            this.skinLabel9.Text = "Mapper package:";
-            // 
-            // skinLabel10
-            // 
-            this.skinLabel10.AutoSize = true;
-            this.skinLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel10.BorderColor = System.Drawing.Color.White;
-            this.skinLabel10.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel10.Location = new System.Drawing.Point(69, 179);
-            this.skinLabel10.Name = "skinLabel10";
-            this.skinLabel10.Size = new System.Drawing.Size(49, 17);
-            this.skinLabel10.TabIndex = 21;
-            this.skinLabel10.Text = "Tables:";
-            // 
-            // cbx_tables
-            // 
-            this.cbx_tables.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbx_tables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_tables.FormattingEnabled = true;
-            this.cbx_tables.Location = new System.Drawing.Point(122, 174);
-            this.cbx_tables.Name = "cbx_tables";
-            this.cbx_tables.Size = new System.Drawing.Size(206, 26);
-            this.cbx_tables.TabIndex = 22;
-            this.cbx_tables.WaterText = "";
             // 
             // Workbench
             // 

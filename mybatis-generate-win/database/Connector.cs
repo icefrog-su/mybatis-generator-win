@@ -23,13 +23,8 @@ namespace mybatis_generate_win.util
         /// <summary>
         /// Check if the current connection information is connected
         /// </summary>
-        /// <param name="ip">Ip address</param>
-        /// <param name="port">Port</param>
-        /// <param name="userName">User name</param>
-        /// <param name="password">Password</param>
-        /// <param name="dbType">Type of DataBaseType</param>
         /// <returns>Returns true if it can connect, otherwise returns false</returns>
-        bool connect(string ip, string port, string userName, string password, DataBaseType dbType);
+        bool connect();
 
         /// <summary>
         /// Load all database information for this connection (oracle does not apply)

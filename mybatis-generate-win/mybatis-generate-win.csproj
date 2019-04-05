@@ -59,6 +59,7 @@
     <Compile Include="database\MySqlConnector.cs" />
     <Compile Include="database\OracleConnector.cs" />
     <Compile Include="database\SqlServerConnector.cs" />
+    <Compile Include="exception\UnSupportOperationException.cs" />
     <Compile Include="util\Constance.cs" />
     <Compile Include="util\Database.cs" />
     <Compile Include="util\DataBaseType.cs" />

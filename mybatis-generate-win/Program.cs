@@ -50,6 +50,9 @@ namespace mybatis_generate_win
                 return;
             }
 
+            // remove the memory
+            SystemUtils.ReleaseMemory(true);
+
 
             Application.Run(new Workbench());
         }

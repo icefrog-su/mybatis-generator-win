@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -48,8 +49,8 @@ namespace mybatis_generate_win.database
                 return reader;
             }
             catch
-            { 
-                return reader;
+            {
+                throw new NotSupportedException("SqlServer operation abnormal, please check the connection");
             }
         }
 
@@ -76,7 +77,7 @@ namespace mybatis_generate_win.database
             }
             catch
             {
-                return -1;
+                throw new NotSupportedException("SqlServer operation abnormal, please check the connection");
             }
             finally
             {
@@ -94,8 +95,8 @@ namespace mybatis_generate_win.database
                 return obj;
             }
             catch
-            { 
-                return null;
+            {
+                throw new NotSupportedException("SqlServer operation abnormal, please check the connection");
             }
             finally
             {
@@ -114,8 +115,8 @@ namespace mybatis_generate_win.database
                 return reader;
             }
             catch
-            { 
-                return null;
+            {
+                throw new NotSupportedException("SqlServer operation abnormal, please check the connection");
             }
         }
 
@@ -130,8 +131,8 @@ namespace mybatis_generate_win.database
                 return ds;
             }
             catch
-            { 
-                return null;
+            {
+                throw new NotSupportedException("SqlServer operation abnormal, please check the connection");
             }
         }
 

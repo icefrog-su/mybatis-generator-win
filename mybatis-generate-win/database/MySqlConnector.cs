@@ -14,6 +14,7 @@
  */
 
 using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 
 namespace mybatis_generate_win.database
@@ -56,8 +57,8 @@ namespace mybatis_generate_win.database
                 return reader;
             }
             catch
-            { 
-                return reader;
+            {
+                throw new NotSupportedException("MySQL operation abnormal, please check the connection");
             }
         }
 
@@ -70,9 +71,9 @@ namespace mybatis_generate_win.database
                 int flag = cmd.ExecuteNonQuery();
                 return flag;
             }
-            catch
+            catch (Exception e)
             {
-                return -1;
+                throw new NotSupportedException("MySQL operation abnormal, please check the connection");
             }
             finally
             {
@@ -90,8 +91,8 @@ namespace mybatis_generate_win.database
                 return obj;
             }
             catch
-            { 
-                return null;
+            {
+                throw new NotSupportedException("MySQL operation abnormal, please check the connection");
             }
             finally
             {
@@ -109,8 +110,8 @@ namespace mybatis_generate_win.database
                 return reader;
             }
             catch
-            { 
-                return null;
+            {
+                throw new NotSupportedException("MySQL operation abnormal, please check the connection");
             }
         }
 
@@ -124,8 +125,8 @@ namespace mybatis_generate_win.database
                 return ds;
             }
             catch
-            { 
-                return null;
+            {
+                throw new NotSupportedException("MySQL operation abnormal, please check the connection");
             }
         }
 

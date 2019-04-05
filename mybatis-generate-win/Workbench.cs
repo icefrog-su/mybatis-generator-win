@@ -93,7 +93,8 @@ namespace mybatis_generate_win
             }
 
             // initialize default database connecte user name and port
-            switch(currentDatabaseSelectedText){
+            switch (currentDatabaseSelectedText)
+            {
                 case Database.MySQL:
                     InitPageDefaultResource(Database.MySQLDefaultUser, Database.MySQLDefaultPort, Database.MySQLDefaultUrl, true, "initialize", false);
                     break;
@@ -133,25 +134,75 @@ namespace mybatis_generate_win
         /// <param name="e">EventArgs</param>
         private void btn_initlize_Click(object sender, EventArgs e)
         {
+
+            string databaseSel = cbx_databaseList.Text;
+            string ipAddr = txt_ip.Text;
+            string port = txt_port.Text;
+            string userName = txt_userName.Text;
+            string password = txt_password.Text;
+            string scheme = cbx_scheme.Text;
+            string url = txt_url.Text;
+
             // check current is an oracle. if an oracle,response the test event, othwise initlize scheme
+            // Query all current connect's database(scheme) information, default DatabaseType is MySQL
+            DatabaseConnectorProvider connectorProvider = DatabaseConnectorProvider.GetInstance(ipAddr, port, userName, password, DataBaseType.MySql);
+            bool result;
 
-            if (IsOracle)
+            // Init the scheme info (sqlserver or mysql) can be test the connect before
+            switch (databaseSel)
             {
-                // Modity the test tag
-                IsTest = true;
-                MessageBox.Show("test the connect(oracle not be has a scheme)");
-
+                case Database.MySQL:
+                    connectorProvider.ChangeDatabaseType(DataBaseType.MySql);
+                    result = connectorProvider.connect();
+                    break;
+                case Database.SqlServer:
+                    connectorProvider.ChangeDatabaseType(DataBaseType.SqlServer);
+                    result = connectorProvider.connect();
+                    break;
+                case Database.Oracle:
+                    // Modity the test tag
+                    IsTest = true;
+                    connectorProvider.ChangeDatabaseType(DataBaseType.Oracle);
+                    result = connectorProvider.connect();
+                    break;
+                default:
+                    result = false;
+                    break;
+            }
+            if (result)
+            {
+                label_connectStatus.Text = "Connected successfully !";
+                label_connectStatus.ForeColor = Color.Green;
+                label_connectStatus.Show();
+                tb_next.Enabled = true;
             }
             else
             {
-                // Init the scheme info (sqlserver or mysql) can be test the connect before
-                MessageBox.Show("initialize the all scheme and test the connect");
+                label_connectStatus.Text = "Connected failed !";
+                label_connectStatus.ForeColor = Color.Red;
+                label_connectStatus.Show();
+                // disable the tb_next button
+                tb_next.Enabled = false;
+            }
 
-                // Query all current connect's database(scheme) information
-
+            if (!IsOracle)
+            {
+                // init the database all scheme
+                List<string> schemes = connectorProvider.initScheme();
+                cbx_scheme.Items.Clear();
+                for (int i = 0; i < schemes.Count; i++)
+                {
+                    cbx_scheme.Items.Add(schemes[i].ToString());
+                }
+                if (cbx_scheme.Items.Count > 0)
+                {
+                    cbx_scheme.SelectedIndex = 0;
+                }
             }
 
         }
+
+
 
         /// <summary>
         /// Next button click event
@@ -160,9 +211,6 @@ namespace mybatis_generate_win
         /// <param name="e">EventArgs</param>
         private void tb_next_Click(object sender, EventArgs e)
         {
-
-            
-
             string databaseSel = cbx_databaseList.Text;
             string ipAddr = txt_ip.Text;
             string port = txt_port.Text;
@@ -201,7 +249,7 @@ namespace mybatis_generate_win
                 label_port.Text = noPortTitle;
                 return;
             }
-            if(!NumberUtils.IsNumber(port) && !NumberUtils.IsSection(1, 65532, Int32.Parse(port)))
+            if (!NumberUtils.IsNumber(port) && !NumberUtils.IsSection(1, 65532, Int32.Parse(port)))
             {
                 string noPortTitle = "Illegal port !";
                 label_port.Show();
@@ -249,8 +297,11 @@ namespace mybatis_generate_win
             }
             label_url.Hide();
 
-            // is not oracle, remind test connect
-
+            // is oracle, remind test connect
+            if (IsOracle)
+            {
+                MessageBox.Show("is oracle");
+            }
 
             // hidden the init panage and show the generate panel
             panel_initResource.Hide();
