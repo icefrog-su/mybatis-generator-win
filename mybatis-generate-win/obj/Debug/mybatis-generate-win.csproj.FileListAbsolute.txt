@@ -23,3 +23,14 @@ C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win
 C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.pdb
 C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win\bin\Debug\mysql.data.dll
 C:\Icefrog\DeveloperFiles\VS Projects\mybatis-generator-win\mybatis-generate-win\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\bin\Debug\mybatis-generate-win.exe
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\bin\Debug\mybatis-generate-win.pdb
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\bin\Debug\CSkin.xml
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csprojAssemblyReference.cache
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis_generate_win.Properties.Resources.resources
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis_generate_win.Workbench.resources
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.GenerateResource.cache
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.CoreCompileInputs.cache
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.CopyComplete
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.exe
+D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.pdb

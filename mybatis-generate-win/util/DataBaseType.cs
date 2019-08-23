@@ -15,6 +15,9 @@
 
 namespace mybatis_generate_win.util
 {
+    /// <summary>
+    /// 数据库类型枚举
+    /// </summary>
     public enum DataBaseType
     {
         MySql, SqlServer, Oracle
