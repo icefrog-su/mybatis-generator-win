@@ -19,10 +19,25 @@ namespace mybatis_generate_win.database
 {
     public abstract class AbstractDatabaseConnector
     {
+        /// <summary>
+        /// Execute a sql and return the DataSet
+        /// </summary>
+        /// <param name="sql">sql string</param>
+        /// <returns></returns>
         public abstract DataSet ExecuteDataSet(string sql);
 
+        /// <summary>
+        /// Execute a sql and return the DataTable
+        /// </summary>
+        /// <param name="sql">sql string</param>
+        /// <returns></returns>
         public abstract DataTable ExecuteDataTable(string sql);
 
+        /// <summary>
+        /// Execute a sql and return the DataRow
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public abstract DataRow ExecuteDataRow(string sql);
     }
 }
