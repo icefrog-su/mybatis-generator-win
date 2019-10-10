@@ -34,3 +34,13 @@ D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate
 D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.CopyComplete
 D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.exe
 D:\CodeRepository\VisualStudio\icefrog-su\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.pdb
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\bin\Debug\mybatis-generate-win.exe
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\bin\Debug\mybatis-generate-win.pdb
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\bin\Debug\CSkin.xml
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csprojAssemblyReference.cache
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis_generate_win.Properties.Resources.resources
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis_generate_win.Workbench.resources
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.GenerateResource.cache
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.csproj.CopyComplete
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.exe
+C:\Users\弯弓科技\Source\Repos\mybatis-generator-win\mybatis-generate-win\obj\Debug\mybatis-generate-win.pdb
