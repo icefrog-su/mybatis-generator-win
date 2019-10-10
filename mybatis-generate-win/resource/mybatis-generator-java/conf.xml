@@ -9,23 +9,23 @@
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://192.168.1.205:3306/wms?characterEncoding=utf-8" userId="root"
+			connectionURL="" userId="root"
 			password="123456">
 		</jdbcConnection>
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
-		<javaModelGenerator targetPackage="cn.wangoon.basedata.category.entity"
+		<javaModelGenerator targetPackage=""
 			targetProject="src">
 			<property name="enableSubPackages" value="false" />
 			<property name="trimStrings" value="false" />
 		</javaModelGenerator>
-		<sqlMapGenerator targetPackage="cn.wangoon.basedata.category.mapper"
+		<sqlMapGenerator targetPackage=""
 			targetProject="src">
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="cn.wangoon.basedata.category.mapper" targetProject="src">
+			targetPackage="" targetProject="src">
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<table tableName="%" schema="dbo"   enableCountByExample="false"
