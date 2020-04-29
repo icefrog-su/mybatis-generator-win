@@ -22,6 +22,8 @@ namespace mybatis_generate_win.database
     public class MySqlConnector : AbstractDatabaseConnector
     {
 
+        public const string DRIVER_CLASS = "com.mysql.jdbc.Driver";
+
         /// <summary>
         /// Database connect object
         /// </summary>
