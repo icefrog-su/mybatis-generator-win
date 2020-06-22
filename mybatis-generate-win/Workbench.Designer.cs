@@ -35,10 +35,8 @@
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel4 = new CCWin.SkinControl.SkinLabel();
             this.txt_userName = new CCWin.SkinControl.SkinTextBox();
             this.txt_password = new CCWin.SkinControl.SkinTextBox();
-            this.txt_url = new CCWin.SkinControl.SkinTextBox();
             this.txt_ip = new CCWin.SkinControl.SkinTextBox();
             this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
             this.txt_port = new CCWin.SkinControl.SkinTextBox();
@@ -47,13 +45,11 @@
             this.cbx_scheme = new CCWin.SkinControl.SkinComboBox();
             this.btn_initlize = new CCWin.SkinControl.SkinButton();
             this.panel_initResource = new CCWin.SkinControl.SkinPanel();
-            this.label_url = new CCWin.SkinControl.SkinLabel();
             this.label_scheme = new CCWin.SkinControl.SkinLabel();
             this.label_password = new CCWin.SkinControl.SkinLabel();
             this.label_userName = new CCWin.SkinControl.SkinLabel();
             this.label_port = new CCWin.SkinControl.SkinLabel();
             this.label_ip = new CCWin.SkinControl.SkinLabel();
-            this.label_connectStatus = new CCWin.SkinControl.SkinLabel();
             this.panel_generate = new CCWin.SkinControl.SkinPanel();
             this.cbx_tables = new CCWin.SkinControl.SkinComboBox();
             this.skinLabel10 = new CCWin.SkinControl.SkinLabel();
@@ -70,6 +66,7 @@
             this.skinLabel14 = new CCWin.SkinControl.SkinLabel();
             this.txt_modelPackage = new CCWin.SkinControl.SkinTextBox();
             this.skinLabel20 = new CCWin.SkinControl.SkinLabel();
+            this.label_connectStatus = new CCWin.SkinControl.SkinLabel();
             this.panel_initResource.SuspendLayout();
             this.panel_generate.SuspendLayout();
             this.SuspendLayout();
@@ -138,18 +135,6 @@
             this.skinLabel3.Size = new System.Drawing.Size(67, 17);
             this.skinLabel3.TabIndex = 4;
             this.skinLabel3.Text = "Password:";
-            // 
-            // skinLabel4
-            // 
-            this.skinLabel4.AutoSize = true;
-            this.skinLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel4.BorderColor = System.Drawing.Color.White;
-            this.skinLabel4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel4.Location = new System.Drawing.Point(57, 256);
-            this.skinLabel4.Name = "skinLabel4";
-            this.skinLabel4.Size = new System.Drawing.Size(34, 17);
-            this.skinLabel4.TabIndex = 5;
-            this.skinLabel4.Text = "URL:";
             // 
             // txt_userName
             // 
@@ -233,47 +218,6 @@
             this.txt_password.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.txt_password.WaterText = "";
             this.txt_password.WordWrap = true;
-            // 
-            // txt_url
-            // 
-            this.txt_url.BackColor = System.Drawing.Color.Transparent;
-            this.txt_url.DownBack = null;
-            this.txt_url.Icon = null;
-            this.txt_url.IconIsButton = false;
-            this.txt_url.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_url.IsPasswordChat = '\0';
-            this.txt_url.IsSystemPasswordChar = false;
-            this.txt_url.Lines = new string[0];
-            this.txt_url.Location = new System.Drawing.Point(97, 252);
-            this.txt_url.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_url.MaxLength = 32767;
-            this.txt_url.MinimumSize = new System.Drawing.Size(28, 28);
-            this.txt_url.MouseBack = null;
-            this.txt_url.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txt_url.Multiline = false;
-            this.txt_url.Name = "txt_url";
-            this.txt_url.NormlBack = null;
-            this.txt_url.Padding = new System.Windows.Forms.Padding(5);
-            this.txt_url.ReadOnly = false;
-            this.txt_url.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_url.Size = new System.Drawing.Size(242, 28);
-            // 
-            // 
-            // 
-            this.txt_url.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_url.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_url.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.txt_url.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.txt_url.SkinTxt.Name = "BaseText";
-            this.txt_url.SkinTxt.Size = new System.Drawing.Size(232, 18);
-            this.txt_url.SkinTxt.TabIndex = 0;
-            this.txt_url.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txt_url.SkinTxt.WaterText = "";
-            this.txt_url.TabIndex = 8;
-            this.txt_url.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_url.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txt_url.WaterText = "";
-            this.txt_url.WordWrap = true;
             // 
             // txt_ip
             // 
@@ -387,7 +331,7 @@
             this.skinLabel7.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel7.BorderColor = System.Drawing.Color.White;
             this.skinLabel7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel7.Location = new System.Drawing.Point(35, 303);
+            this.skinLabel7.Location = new System.Drawing.Point(35, 255);
             this.skinLabel7.Name = "skinLabel7";
             this.skinLabel7.Size = new System.Drawing.Size(56, 17);
             this.skinLabel7.TabIndex = 14;
@@ -398,7 +342,7 @@
             this.cbx_scheme.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbx_scheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_scheme.FormattingEnabled = true;
-            this.cbx_scheme.Location = new System.Drawing.Point(97, 299);
+            this.cbx_scheme.Location = new System.Drawing.Point(97, 251);
             this.cbx_scheme.Name = "cbx_scheme";
             this.cbx_scheme.Size = new System.Drawing.Size(165, 26);
             this.cbx_scheme.TabIndex = 13;
@@ -409,14 +353,14 @@
             this.btn_initlize.BackColor = System.Drawing.Color.Transparent;
             this.btn_initlize.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.btn_initlize.DownBack = null;
-            this.btn_initlize.Location = new System.Drawing.Point(273, 300);
+            this.btn_initlize.Location = new System.Drawing.Point(265, 251);
             this.btn_initlize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_initlize.MouseBack = null;
             this.btn_initlize.Name = "btn_initlize";
             this.btn_initlize.NormlBack = null;
-            this.btn_initlize.Size = new System.Drawing.Size(66, 24);
+            this.btn_initlize.Size = new System.Drawing.Size(72, 24);
             this.btn_initlize.TabIndex = 15;
-            this.btn_initlize.Text = "initialize";
+            this.btn_initlize.Text = "Connect";
             this.btn_initlize.UseVisualStyleBackColor = false;
             this.btn_initlize.Click += new System.EventHandler(this.btn_initlize_Click);
             // 
@@ -424,7 +368,6 @@
             // 
             this.panel_initResource.BackColor = System.Drawing.Color.Transparent;
             this.panel_initResource.Controls.Add(this.panel_generate);
-            this.panel_initResource.Controls.Add(this.label_url);
             this.panel_initResource.Controls.Add(this.label_scheme);
             this.panel_initResource.Controls.Add(this.label_password);
             this.panel_initResource.Controls.Add(this.label_userName);
@@ -437,13 +380,11 @@
             this.panel_initResource.Controls.Add(this.skinLabel1);
             this.panel_initResource.Controls.Add(this.skinLabel2);
             this.panel_initResource.Controls.Add(this.skinLabel3);
-            this.panel_initResource.Controls.Add(this.skinLabel4);
             this.panel_initResource.Controls.Add(this.txt_port);
             this.panel_initResource.Controls.Add(this.txt_userName);
             this.panel_initResource.Controls.Add(this.skinLabel6);
             this.panel_initResource.Controls.Add(this.txt_password);
             this.panel_initResource.Controls.Add(this.txt_ip);
-            this.panel_initResource.Controls.Add(this.txt_url);
             this.panel_initResource.Controls.Add(this.skinLabel5);
             this.panel_initResource.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.panel_initResource.DownBack = null;
@@ -454,19 +395,6 @@
             this.panel_initResource.Size = new System.Drawing.Size(349, 351);
             this.panel_initResource.TabIndex = 16;
             // 
-            // label_url
-            // 
-            this.label_url.AutoSize = true;
-            this.label_url.BackColor = System.Drawing.Color.Transparent;
-            this.label_url.BorderColor = System.Drawing.Color.White;
-            this.label_url.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_url.ForeColor = System.Drawing.Color.Red;
-            this.label_url.Location = new System.Drawing.Point(96, 280);
-            this.label_url.Name = "label_url";
-            this.label_url.Size = new System.Drawing.Size(128, 17);
-            this.label_url.TabIndex = 21;
-            this.label_url.Text = "Please enter the url !";
-            // 
             // label_scheme
             // 
             this.label_scheme.AutoSize = true;
@@ -474,7 +402,7 @@
             this.label_scheme.BorderColor = System.Drawing.Color.White;
             this.label_scheme.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_scheme.ForeColor = System.Drawing.Color.Red;
-            this.label_scheme.Location = new System.Drawing.Point(96, 327);
+            this.label_scheme.Location = new System.Drawing.Point(96, 279);
             this.label_scheme.Name = "label_scheme";
             this.label_scheme.Size = new System.Drawing.Size(147, 17);
             this.label_scheme.TabIndex = 20;
@@ -532,19 +460,6 @@
             this.label_ip.TabIndex = 16;
             this.label_ip.Text = "Please enter the IP address !";
             // 
-            // label_connectStatus
-            // 
-            this.label_connectStatus.AutoSize = true;
-            this.label_connectStatus.BackColor = System.Drawing.Color.Transparent;
-            this.label_connectStatus.BorderColor = System.Drawing.Color.White;
-            this.label_connectStatus.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_connectStatus.ForeColor = System.Drawing.Color.Green;
-            this.label_connectStatus.Location = new System.Drawing.Point(7, 406);
-            this.label_connectStatus.Name = "label_connectStatus";
-            this.label_connectStatus.Size = new System.Drawing.Size(149, 17);
-            this.label_connectStatus.TabIndex = 22;
-            this.label_connectStatus.Text = "Connected successfully !";
-            // 
             // panel_generate
             // 
             this.panel_generate.BackColor = System.Drawing.Color.Transparent;
@@ -565,7 +480,7 @@
             this.panel_generate.Controls.Add(this.skinLabel20);
             this.panel_generate.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.panel_generate.DownBack = null;
-            this.panel_generate.Location = new System.Drawing.Point(0, 0);
+            this.panel_generate.Location = new System.Drawing.Point(3, 3);
             this.panel_generate.MouseBack = null;
             this.panel_generate.Name = "panel_generate";
             this.panel_generate.NormlBack = null;
@@ -908,11 +823,24 @@
             this.skinLabel20.TabIndex = 9;
             this.skinLabel20.Text = "Model package:";
             // 
+            // label_connectStatus
+            // 
+            this.label_connectStatus.AutoSize = true;
+            this.label_connectStatus.BackColor = System.Drawing.Color.Transparent;
+            this.label_connectStatus.BorderColor = System.Drawing.Color.White;
+            this.label_connectStatus.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_connectStatus.ForeColor = System.Drawing.Color.Green;
+            this.label_connectStatus.Location = new System.Drawing.Point(7, 406);
+            this.label_connectStatus.Name = "label_connectStatus";
+            this.label_connectStatus.Size = new System.Drawing.Size(149, 17);
+            this.label_connectStatus.TabIndex = 22;
+            this.label_connectStatus.Text = "Connected successfully !";
+            // 
             // Workbench
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 430);
+            this.ClientSize = new System.Drawing.Size(394, 431);
             this.Controls.Add(this.label_connectStatus);
             this.Controls.Add(this.panel_initResource);
             this.Controls.Add(this.tb_next);
@@ -939,10 +867,8 @@
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private CCWin.SkinControl.SkinLabel skinLabel2;
         private CCWin.SkinControl.SkinLabel skinLabel3;
-        private CCWin.SkinControl.SkinLabel skinLabel4;
         private CCWin.SkinControl.SkinTextBox txt_userName;
         private CCWin.SkinControl.SkinTextBox txt_password;
-        private CCWin.SkinControl.SkinTextBox txt_url;
         private CCWin.SkinControl.SkinTextBox txt_ip;
         private CCWin.SkinControl.SkinLabel skinLabel5;
         private CCWin.SkinControl.SkinTextBox txt_port;
@@ -956,7 +882,6 @@
         private CCWin.SkinControl.SkinLabel label_userName;
         private CCWin.SkinControl.SkinLabel label_port;
         private CCWin.SkinControl.SkinLabel label_scheme;
-        private CCWin.SkinControl.SkinLabel label_url;
         private CCWin.SkinControl.SkinLabel label_connectStatus;
         private CCWin.SkinControl.SkinPanel panel_generate;
         private CCWin.SkinControl.SkinLabel skinLabel14;

@@ -84,7 +84,7 @@ namespace mybatis_generate_win.util
                 if (DATABASE_TYPE == DataBaseType.MySql)
                 {
                     MySqlConnector connector = MySqlConnector.GetInstance(IP, PORT, USER_NAME, PASSWORD, "");
-                    DataTable tb = connector.ExecuteDataTable(Database.MYSQL_ALL_TABLE_SCRIPT);
+                    DataTable tb = connector.ExecuteDataTable(Database.MYSQL_ALL_DATABASE_SCRIPT);
                     tb.Rows[0]["Database"].ToString();
                 }
                 else if (DATABASE_TYPE == DataBaseType.SqlServer)
@@ -113,6 +113,44 @@ namespace mybatis_generate_win.util
         }
 
         /// <summary>
+        /// Load all tables list for the connection (oracle does not apply)
+        /// </summary>
+        /// <returns>List for all tables name</returns>
+        public List<string> initAllTable(string scheme)
+        {
+            List<string> schemes = new List<string>();
+            try
+            {
+                // An attempt to perform a database operation is considered incorrect if an exception is thrown
+                if (DATABASE_TYPE == DataBaseType.MySql)
+                {
+                    MySqlConnector connector = MySqlConnector.GetInstance(IP, PORT, USER_NAME, PASSWORD, scheme);
+                    DataTable tb = connector.ExecuteDataTable(Database.MYSQL_ALL_TABLES_SCRIPT);
+                    for (int i = 0; i < tb.Rows.Count; i++)
+                    {
+                        schemes.Add(tb.Rows[i][0].ToString());
+                    }
+                }
+                else if (DATABASE_TYPE == DataBaseType.SqlServer)
+                {
+                    // unsupport
+                }
+                else if (DATABASE_TYPE == DataBaseType.Oracle)
+                {
+                    // unsupport
+                }
+                else
+                {
+                    // unknow database, return the false
+                }
+            } catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.Message);
+            }
+            return schemes;
+        }
+
+        /// <summary>
         /// Load all database information for this connection (oracle does not apply)
         /// </summary>
         /// <returns>List's all scheme name</returns>
@@ -125,7 +163,7 @@ namespace mybatis_generate_win.util
                 if (DATABASE_TYPE == DataBaseType.MySql)
                 {
                     MySqlConnector connector = MySqlConnector.GetInstance(IP, PORT, USER_NAME, PASSWORD, "");
-                    DataTable tb = connector.ExecuteDataTable(Database.MYSQL_ALL_TABLE_SCRIPT);
+                    DataTable tb = connector.ExecuteDataTable(Database.MYSQL_ALL_DATABASE_SCRIPT);
                     for(int i = 0; i < tb.Rows.Count; i++)
                     {
                         schemes.Add(tb.Rows[i]["Database"].ToString());

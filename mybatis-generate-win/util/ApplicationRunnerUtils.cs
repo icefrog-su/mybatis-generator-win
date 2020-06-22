@@ -1,8 +1,11 @@
 ﻿using mybatis_generate_win.database;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace mybatis_generate_win.util
 {
@@ -25,15 +28,19 @@ namespace mybatis_generate_win.util
         /// <param name="ModelPackage">modelPackage</param>
         /// <param name="JavaMapperPackage">javaMapperPackage</param>
         /// <param name="XmlMapperPackage">xmlMapperPackage</param>
+        /// <param name="TableNames">TableNames</param>
+        /// <param name="Src">Src</param>
         public static void SerializeRun(string TargetRuntime, string ConnectionUrl, string UserId,
                                         string Password, string ModelPackage, string JavaMapperPackage,
                                         string XmlMapperPackage, bool IsForceBigDecimals, bool IsEnableSubPackages,
-                                        bool IsTrimStrings)
+                                        bool IsTrimStrings, string TableNames, string Src)
         {
             ConfigFileBuilder fileBuilder = ConfigFileBuilder.getInstance(TargetRuntime, ConnectionUrl, UserId, Password,
                                                                           ModelPackage, JavaMapperPackage, XmlMapperPackage,
-                                                                          IsForceBigDecimals, IsEnableSubPackages, IsTrimStrings);
+                                                                          IsForceBigDecimals, IsEnableSubPackages, IsTrimStrings, TableNames, Src);
             fileBuilder.GenerateMyBatisConfigXml();
+
+            fileBuilder.run(Application.StartupPath + @"\gener.bat");
         }
     }
 
@@ -48,6 +55,8 @@ namespace mybatis_generate_win.util
         static string ModelPackage           = null;
         static string JavaMapperPackage      = null;
         static string XmlMapperPackage       = null;
+        static string TableNames             = null;
+        static string Src                    = null;
         static bool   IsForceBigDecimals     = false;
         static bool   IsEnableSubPackages    = false;
         static bool   IsTrimStrings          = false;
@@ -62,7 +71,7 @@ namespace mybatis_generate_win.util
         /// </summary>
         private static ConfigFileBuilder instance = null;
 
-        
+
         /// <summary>
         /// Get ConfigFileBuilder singleton instance
         /// </summary>
@@ -76,11 +85,13 @@ namespace mybatis_generate_win.util
         /// <param name="ModelPackage">modelPackage</param>
         /// <param name="JavaMapperPackage">javaMapperPackage</param>
         /// <param name="XmlMapperPackage">xmlMapperPackage</param>
+        /// <param name="TableNames">TableNames</param>
+        /// <param name="Src">Src</param>
         /// <returns>ConfigFileBuilder singleton instance</returns>
         public static ConfigFileBuilder getInstance(string TargetRuntime, string ConnectionUrl, string UserId,
                                                     string Password, string ModelPackage, string JavaMapperPackage,
                                                     string XmlMapperPackage, bool IsForceBigDecimals, bool IsEnableSubPackages,
-                                                    bool IsTrimStrings)
+                                                    bool IsTrimStrings, string TableNames, string Src)
         {
             if (instance == null)
             {
@@ -96,6 +107,8 @@ namespace mybatis_generate_win.util
                 ConfigFileBuilder.ModelPackage = ModelPackage;
                 ConfigFileBuilder.JavaMapperPackage = JavaMapperPackage;
                 ConfigFileBuilder.XmlMapperPackage = XmlMapperPackage;
+                ConfigFileBuilder.TableNames = TableNames;
+                ConfigFileBuilder.Src = Src;
             }
             return instance;
         }
@@ -112,6 +125,39 @@ namespace mybatis_generate_win.util
 
             // TODO rewrite to conf.xml
 
+            FileStream f = null;
+            StreamWriter write = null;
+            try
+            {
+                string execPath = Application.StartupPath;
+                
+                f = new FileStream(execPath + @"\conf.xml", FileMode.Create);
+                write = new StreamWriter(f);
+                write.WriteLine(templateConfXml);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                write.Close();
+                f.Close();
+            }
+        }
+
+        public void run(string batPath)
+        {
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.CreateNoWindow = false;
+                process.StartInfo.FileName = batPath;
+                process.Start();
+            } catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         /// <summary>
@@ -131,26 +177,26 @@ namespace mybatis_generate_win.util
             "\t\t\t<property name=\"suppressAllComments\" value=\"true\" />\n" +
             "\t\t</commentGenerator>\n" +
             "\t\t<jdbcConnection driverClass=\"" + MySqlConnector.DRIVER_CLASS + "\"\n" +
-            "\t\t\tconnectionURL=\" " + ConfigFileBuilder.ConnectionUrl + " \" userId=\" " + ConfigFileBuilder.UserId + " \"\n" +
+            "\t\t\tconnectionURL=\"" + ConfigFileBuilder.ConnectionUrl + "\" userId=\"" + ConfigFileBuilder.UserId + "\"\n" +
             "\t\t\tpassword=\"" + ConfigFileBuilder.Password + "\">\n" +
             "\t\t</jdbcConnection>\n" +
             "\t\t<javaTypeResolver>\n" +
             "\t\t\t<property name=\"forceBigDecimals\" value=\""+ ConfigFileBuilder.IsForceBigDecimals.ToString().ToLower() + "\" />\n" +
             "\t\t</javaTypeResolver>\n" +
             "\t\t<javaModelGenerator targetPackage=\"" + ConfigFileBuilder.ModelPackage + "\"\n" +
-            "\t\t\ttargetProject=\"src\">\n" +
+            "\t\t\ttargetProject=\""+ ConfigFileBuilder.Src + "\">\n" +
             "\t\t\t<property name=\"enableSubPackages\" value=\"" + ConfigFileBuilder.IsEnableSubPackages.ToString().ToLower() + "\" />\n" +
             "\t\t\t<property name=\"trimStrings\" value=\"" + ConfigFileBuilder.IsTrimStrings.ToString().ToLower() + "\" />\n" +
             "\t\t</javaModelGenerator>\n" +
             "\t\t<sqlMapGenerator targetPackage=\"" + ConfigFileBuilder.JavaMapperPackage + "\"\n" +
-            "\t\t\ttargetProject=\"src\">\n" +
+            "\t\t\ttargetProject=\""+ ConfigFileBuilder.Src + "\">\n" +
             "\t\t\t<property name=\"enableSubPackages\" value=\"" + ConfigFileBuilder.IsEnableSubPackages.ToString().ToLower() + "\" />\n" +
             "\t\t</sqlMapGenerator>\n" +
             "\t\t<javaClientGenerator type=\"XMLMAPPER\"\n" +
-            "\t\t\ttargetPackage=\"" + ConfigFileBuilder.XmlMapperPackage + "\" targetProject=\"src\">\n" +
+            "\t\t\ttargetPackage=\"" + ConfigFileBuilder.XmlMapperPackage + "\" targetProject=\""+ ConfigFileBuilder.Src + "\">\n" +
             "\t\t\t<property name=\"enableSubPackages\" value=\"" + ConfigFileBuilder.IsEnableSubPackages.ToString().ToLower() + "\" />\n" +
             "\t\t</javaClientGenerator>\n" +
-            "\t\t<table tableName=\"%\" schema=\"dbo\"   enableCountByExample=\"false\"\n" +
+            "\t\t<table tableName=\""+ ConfigFileBuilder.TableNames +"\" schema=\"dbo\"   enableCountByExample=\"false\"\n" +
             "\t\t\tenableUpdateByExample=\"false\" enableDeleteByExample=\"false\"\n" +
             "\t\t\tenableSelectByExample=\"false\" selectByExampleQueryId=\"false\">\n" +
             "\t\t\t<property name=\"useActualColumnNames\" value=\"false\" />\n" +

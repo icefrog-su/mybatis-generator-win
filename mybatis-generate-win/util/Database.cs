@@ -104,7 +104,12 @@ namespace mybatis_generate_win.util
         /// <summary>
         /// SELECT MYSQL DATABASE ALL DATABASE NAME
         /// </summary>
-        public const string MYSQL_ALL_TABLE_SCRIPT = "SHOW DATABASES";
+        public const string MYSQL_ALL_DATABASE_SCRIPT = "SHOW DATABASES";
+
+        /// <summary>
+        /// SELECT MYSQL ALL TABLES
+        /// </summary>
+        public const string MYSQL_ALL_TABLES_SCRIPT = "SHOW TABLES";
 
         /// <summary>
         /// SELECT SQLSERVER DATABASE ALL DATABASE NAME

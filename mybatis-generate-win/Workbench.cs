@@ -51,8 +51,9 @@ namespace mybatis_generate_win
         {
             // initialize database
             cbx_databaseList.Items.Add(Database.MySQL);
-            cbx_databaseList.Items.Add(Database.SqlServer);
-            cbx_databaseList.Items.Add(Database.Oracle);
+            // cbx_databaseList.Items.Add(Database.SqlServer);
+            // cbx_databaseList.Items.Add(Database.Oracle);
+
             // default selected index 1(0)
             cbx_databaseList.SelectedIndex = 0;
 
@@ -65,7 +66,6 @@ namespace mybatis_generate_win
             label_userName.Hide();
             label_password.Hide();
             label_scheme.Hide();
-            label_url.Hide();
             label_connectStatus.Hide();
 
             // hidden generate panel and show the init panel
@@ -117,7 +117,6 @@ namespace mybatis_generate_win
         {
             txt_userName.Text = defaultUser;
             txt_port.Text = defaultPort;
-            txt_url.Text = defaultUrl;
             cbx_scheme.Enabled = isEnableScheme;
             btn_initlize.Text = initializeBtnText;
             IsOracle = isOracle;
@@ -143,7 +142,6 @@ namespace mybatis_generate_win
             string userName = txt_userName.Text;
             string password = txt_password.Text;
             string scheme = cbx_scheme.Text;
-            string url = txt_url.Text;
 
             // check current is an oracle. if an oracle,response the test event, othwise initlize scheme
             // Query all current connect's database(scheme) information, default DatabaseType is MySQL
@@ -205,6 +203,10 @@ namespace mybatis_generate_win
         }
 
 
+        /// <summary>
+        /// 当前按钮状态。 1 = Next  2 = Serialize
+        /// </summary>
+        int currentButtonStatus = 1;
 
         /// <summary>
         /// Next button click event
@@ -213,19 +215,69 @@ namespace mybatis_generate_win
         /// <param name="e">EventArgs</param>
         private void tb_next_Click(object sender, EventArgs e)
         {
-
             var result = CheckInput(true);
             if (!result)
             {
                 return;
             }
 
-            // hidden the init panage and show the generate panel
-            // panel_initResource.Hide();
-            panel_generate.Show();
+            string ip = txt_ip.Text;
+            string port = txt_port.Text;
+            string userName = txt_userName.Text;
+            string password = txt_password.Text;
+            string scheme = cbx_scheme.Text;
 
-            label_connectStatus.Hide();
-            tb_next.Text = "Serialize";
+            string modelPackage = txt_modelPackage.Text;
+            string daoPackage = txt_daoPackage.Text;
+            string mapperXmlPackage = txt_mapperPackage.Text;
+
+            bool removeComment = cb_removeComment.Checked;
+            bool forceBigDecimals = cb_forceBbigDecimals.Checked;
+            bool enableSubPackag = cb_enableSubPackages.Checked;
+            bool trimStrings = cb_trimStrings.Checked;
+            bool useActualColumnNames = cb_useActualColumnNames.Checked;
+
+
+            if (currentButtonStatus == 1)
+            {
+                // hidden the init panage and show the generate panel
+                // panel_initResource.Hide();
+                panel_generate.Show();
+
+                label_connectStatus.Hide();
+                tb_next.Text = "Serialize";
+                currentButtonStatus = 2;
+
+                // 查询选中数据库下的所有表信息
+                DatabaseConnectorProvider connectorProvider = DatabaseConnectorProvider.GetInstance(ip, port, userName, password, DataBaseType.MySql);
+                connectorProvider.ChangeDatabaseType(DataBaseType.MySql);
+                bool connectResult = connectorProvider.connect();
+                if (connectResult)
+                {
+                    cbx_tables.Items.Clear();
+                    List<string> tableList = connectorProvider.initAllTable(scheme);
+                    // add default scheme(all table)
+                    cbx_tables.Items.Add("%");
+                    for (int i = 0; i < tableList.Count; i++)
+                    {
+                        cbx_tables.Items.Add(tableList[i].ToString());
+                    }
+                }
+            }
+            else if (currentButtonStatus == 2)
+            {
+                // serialize
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+                folderBrowserDialog.Description = "请选择具体保存的文件夹";
+                folderBrowserDialog.ShowNewFolderButton = true;
+                folderBrowserDialog.ShowDialog();
+
+                string selectPath = folderBrowserDialog.SelectedPath;
+
+                string connectUrl = String.Format("jdbc:mysql://{0}:{1}/{2}?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;autoReconnect=true",
+                    ip, port, scheme);
+                ApplicationRunnerUtils.SerializeRun(txt_targetRuntime.Text, connectUrl, userName, password, modelPackage, daoPackage, mapperXmlPackage, forceBigDecimals, enableSubPackag, trimStrings, cbx_tables.SelectedItem.ToString(), selectPath);
+            }
         }
 
         private bool CheckInput(bool isNextEvent)
@@ -236,7 +288,6 @@ namespace mybatis_generate_win
             string userName = txt_userName.Text;
             string password = txt_password.Text;
             string scheme = cbx_scheme.Text;
-            string url = txt_url.Text;
 
             // check inputs
             if (StringUtils.isEmpty(databaseSel))
@@ -252,13 +303,13 @@ namespace mybatis_generate_win
                 label_ip.Text = noIpTitle;
                 return false;
             }
-            if (!InputSecurity.isIp(ipAddr))
+            /*if (!InputSecurity.IsIp(ipAddr) || !!InputSecurity.IsDomain(ipAddr))
             {
                 string ipNotAllow = "Illegal ip address !";
                 label_ip.Show();
                 label_ip.Text = ipNotAllow;
                 return false;
-            }
+            }*/
             label_ip.Hide();
             // port
             if (StringUtils.isEmpty(port))
@@ -288,7 +339,7 @@ namespace mybatis_generate_win
             // password
             if (StringUtils.isEmpty(password))
             {
-                string noPasswordTitle = "Please enter the user name !";
+                string noPasswordTitle = "Please enter the password !";
                 label_password.Show();
                 label_password.Text = noPasswordTitle;
                 return false;
@@ -306,16 +357,17 @@ namespace mybatis_generate_win
                 }
             }
             label_scheme.Hide();
-            // url
-            if (StringUtils.isEmpty(url))
-            {
-                string noUrlTitle = "Please enter the url !";
-                label_url.Show();
-                label_url.Text = noUrlTitle;
-                return false;
-            }
-            label_url.Hide();
             return true;
+        }
+
+        /// <summary>
+        /// ip input text value changed event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Txt_ip_SizeChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test");
         }
     }
 }

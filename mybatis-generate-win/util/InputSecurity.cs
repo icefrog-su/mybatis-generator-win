@@ -19,19 +19,22 @@ namespace mybatis_generate_win.util
     public class InputSecurity
     {
         // Deprecated
-        public static bool inputCheck(string databaseSel, string ipAddress, string port,
+        public static bool InputCheck(string databaseSel, string ipAddress, string port,
             string userName, string password, string scheme, string url)
         {
             return false;
         }
 
-        public static bool isIp(string ip)
+        public static bool IsIp(string ip)
         {
             Regex rx = new Regex(@"((?:(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d))))");
-            if (rx.IsMatch(ip))
-                return true;
-            else
-                return false;
+            return rx.IsMatch(ip);
+        }
+
+        public static bool IsDomain(string domain)
+        {
+            Regex rx = new Regex(@"^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+$");
+            return rx.IsMatch(domain);
         }
     }
 }
